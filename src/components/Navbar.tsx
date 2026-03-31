@@ -73,7 +73,8 @@ export default function Navbar() {
             </button>
 
             {workOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 min-w-[260px] rounded-lg border border-white/10 bg-[#111] p-2 shadow-xl">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 min-w-[260px]">
+              <div className="rounded-lg border border-white/10 bg-[#111] p-2 shadow-xl">
                 {workDropdown.map((item) => (
                   <Link
                     key={item.href}
@@ -96,6 +97,7 @@ export default function Navbar() {
                     <FlagImage code={item.flagCode} size={14} />
                   </Link>
                 ))}
+              </div>
               </div>
             )}
           </li>
