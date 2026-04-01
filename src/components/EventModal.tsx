@@ -50,7 +50,7 @@ export default function EventModal({ event, onClose }: EventModalProps) {
       >
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 text-foreground/50 hover:text-foreground hover:bg-white/20 transition-colors"
+          className="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 text-white/70 hover:text-[#FFD700] hover:bg-white/20 transition-colors"
         >
           ×
         </button>

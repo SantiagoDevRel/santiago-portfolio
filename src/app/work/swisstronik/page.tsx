@@ -1,5 +1,5 @@
 // Work page — Swisstronik
-import CompanyHero from "@/components/CompanyHero";
+import CompanyPageLayout from "@/components/CompanyPageLayout";
 import HorizontalScroll from "@/components/HorizontalScroll";
 import EventCard from "@/components/EventCard";
 import EducationCard from "@/components/EducationCard";
@@ -13,51 +13,29 @@ const companyEducation = education.filter((e) => e.company === "Swisstronik");
 
 export default function SwisstronikPage() {
   return (
-    <>
-      <CompanyHero
-        logoUrl="/images/events/swisstronik_logo.jpg"
-        companyName="Swisstronik"
-        flagCode="ch"
-        role={entry.role}
-        period={`${entry.period.start} – ${entry.period.end}`}
-        description={entry.description}
-        metrics={entry.metrics}
-        websiteUrl={entry.companyUrl}
-      />
-
-      {entry.highlights && entry.highlights.length > 0 && (
-        <section className="py-12 px-6 max-w-4xl mx-auto border-t border-white/[0.06]">
-          <h2 className="text-xl font-bold tracking-tight mb-6">Highlights</h2>
-          <ul className="space-y-3">
-            {entry.highlights.map((h, i) => (
-              <li key={i} className="text-sm text-foreground/45 flex gap-3">
-                <span className="text-accent/60 shrink-0">—</span>
-                {h}
-              </li>
+    <CompanyPageLayout entry={entry}>
+      {companyEvents.length > 0 && (
+        <section className="border-t border-white/[0.06] pt-12 mb-12">
+          <HorizontalScroll title="Events and Trips">
+            {companyEvents.map((e) => (
+              <div key={e.id} className="min-w-[320px] max-w-[320px] shrink-0">
+                <EventCard event={e} />
+              </div>
             ))}
-          </ul>
+          </HorizontalScroll>
         </section>
       )}
-
-      {companyEvents.length > 0 && (
-        <HorizontalScroll title="Events and Trips">
-          {companyEvents.map((e) => (
-            <div key={e.id} className="min-w-[320px] max-w-[320px] shrink-0">
-              <EventCard event={e} />
-            </div>
-          ))}
-        </HorizontalScroll>
-      )}
-
       {companyEducation.length > 0 && (
-        <HorizontalScroll title="Content and Education">
-          {companyEducation.map((e) => (
-            <div key={e.id} className="min-w-[320px] max-w-[320px] shrink-0">
-              <EducationCard entry={e} />
-            </div>
-          ))}
-        </HorizontalScroll>
+        <section className="border-t border-white/[0.06] pt-12">
+          <HorizontalScroll title="Content and Education">
+            {companyEducation.map((e) => (
+              <div key={e.id} className="min-w-[320px] max-w-[320px] shrink-0">
+                <EducationCard entry={e} />
+              </div>
+            ))}
+          </HorizontalScroll>
+        </section>
       )}
-    </>
+    </CompanyPageLayout>
   );
 }

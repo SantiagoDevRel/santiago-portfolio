@@ -74,14 +74,14 @@ export default function CareerTimeline() {
                 <div
                   className={`w-11 h-11 rounded-full bg-[#1a1a1a] transition-all duration-200 ${
                     isActive
-                      ? "border-2 border-accent shadow-[0_0_12px_rgba(0,255,136,0.3)]"
+                      ? "border-2 border-[#FFD700] shadow-[0_0_12px_rgba(255,215,0,0.3)]"
                       : "border border-white/[0.08] group-hover:border-white/20"
                   }`}
                 />
                 <span
                   className={`text-sm font-semibold transition-colors duration-200 ${
                     isActive
-                      ? "text-accent"
+                      ? "bg-gradient-to-r from-[#FFD700] via-[#FF6B35] to-[#00C853] bg-clip-text text-transparent"
                       : "text-foreground/40 group-hover:text-foreground/70"
                   }`}
                 >

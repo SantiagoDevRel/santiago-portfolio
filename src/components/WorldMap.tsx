@@ -73,7 +73,7 @@ export default function WorldMap() {
     <>
       <section id="map" className="pt-4 pb-12 px-6">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 tracking-tight">
-          Where I&apos;ve Been
+          Where I have been (for work!)
         </h2>
 
         <div className="max-w-6xl mx-auto rounded-xl overflow-hidden border border-white/10">
@@ -172,7 +172,7 @@ export default function WorldMap() {
             onClick={() => { setActiveCategory(null); setSelectedEvent(null); }}
             className={`flex items-center gap-2 text-xs px-3 py-1.5 rounded-full border transition-all duration-200 ${
               activeCategory === null
-                ? "bg-accent text-background border-accent font-semibold"
+                ? "bg-gradient-to-r from-[#FFD700] via-[#FF6B35] to-[#00C853] text-background border-transparent font-semibold"
                 : "border-white/[0.08] text-foreground/40 hover:text-foreground/60 hover:border-white/15"
             }`}
           >
@@ -187,7 +187,7 @@ export default function WorldMap() {
                 onClick={() => { setActiveCategory(isActive ? null : category); setSelectedEvent(null); }}
                 className={`flex items-center gap-2 text-xs px-3 py-1.5 rounded-full border transition-all duration-200 ${
                   isActive
-                    ? "bg-accent text-background border-accent font-semibold"
+                    ? "bg-gradient-to-r from-[#FFD700] via-[#FF6B35] to-[#00C853] text-background border-transparent font-semibold"
                     : "border-white/[0.08] text-foreground/40 hover:text-foreground/60 hover:border-white/15"
                 }`}
               >

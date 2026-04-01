@@ -26,7 +26,7 @@ export default function EventCard({ event }: EventCardProps) {
 
   return (
     <>
-      <div className="rounded-xl border border-white/10 bg-white/[0.02] overflow-hidden hover:border-accent/20 transition-all duration-300 group flex flex-col min-h-[420px]">
+      <div className="rounded-xl border border-white/10 bg-white/[0.02] overflow-hidden hover:border-accent/20 transition-all duration-300 group flex flex-col h-full">
         {/* Cover: image or category placeholder */}
         {event.imageUrl ? (
           <div className="relative w-full h-[160px] shrink-0 overflow-hidden">
@@ -139,7 +139,7 @@ export default function EventCard({ event }: EventCardProps) {
             {hasDetails && (
               <button
                 onClick={() => setShowModal(true)}
-                className="text-xs text-accent/70 hover:text-accent transition-colors duration-200 ml-auto"
+                className="text-xs text-[#FFD700]/70 hover:text-[#FFD700] transition-colors duration-200 ml-auto"
               >
                 See more →
               </button>

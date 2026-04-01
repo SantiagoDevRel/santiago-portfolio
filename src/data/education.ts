@@ -14,6 +14,7 @@ export interface EducationEntry {
   description: string;
   links: { label: string; url: string }[];
   imageUrl: string | null;
+  imagePosition?: string;
   featured: boolean;
 }
 
@@ -78,6 +79,7 @@ export const education: EducationEntry[] = [
       { label: "LinkedIn post", url: "https://www.linkedin.com/feed/update/urn:li:activity:7132433750809849856/" },
     ],
     imageUrl: "/images/events/swisstronik_video_2.jpg",
+    imagePosition: "top",
     featured: false,
   },
   {
@@ -171,6 +173,7 @@ export const education: EducationEntry[] = [
       { label: "Hackathon bounty page", url: "https://learnweb3.io/hackathons/decentralized-intelligence-season-2/prizes/" },
     ],
     imageUrl: "/images/events/hackathon.jpg",
+    imagePosition: "top",
     featured: false,
   },
   {

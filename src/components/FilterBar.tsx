@@ -26,7 +26,7 @@ export default function FilterBar({
         onClick={() => onFilterChange("All")}
         className={`flex items-center gap-2 text-xs px-3 py-1.5 rounded-full border transition-all duration-200 ${
           activeFilter === "All"
-            ? "bg-accent text-background border-accent font-semibold"
+            ? "bg-gradient-to-r from-[#FFD700] via-[#FF6B35] to-[#00C853] text-background border-transparent font-semibold"
             : "border-white/[0.08] text-foreground/40 hover:text-foreground/60 hover:border-white/15"
         }`}
       >
@@ -41,7 +41,7 @@ export default function FilterBar({
             onClick={() => onFilterChange(category)}
             className={`flex items-center gap-2 text-xs px-3 py-1.5 rounded-full border transition-all duration-200 ${
               isActive
-                ? "bg-accent text-background border-accent font-semibold"
+                ? "bg-gradient-to-r from-[#FFD700] via-[#FF6B35] to-[#00C853] text-background border-transparent font-semibold"
                 : "border-white/[0.08] text-foreground/40 hover:text-foreground/60 hover:border-white/15"
             }`}
           >

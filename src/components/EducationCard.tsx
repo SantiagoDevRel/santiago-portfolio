@@ -25,7 +25,7 @@ export default function EducationCard({ entry }: EducationCardProps) {
 
   return (
     <>
-    <div className="rounded-xl border border-white/10 bg-white/[0.02] overflow-hidden hover:border-accent/20 transition-all duration-300 group flex flex-col min-h-[420px]">
+    <div className="rounded-xl border border-white/10 bg-white/[0.02] overflow-hidden hover:border-accent/20 transition-all duration-300 group flex flex-col h-full">
       {/* Cover: survey chart, image, or category placeholder */}
       {entry.id === "swisstronik-dev-survey-2023" ? (
         <div className="h-[160px] shrink-0 overflow-hidden">
@@ -38,6 +38,7 @@ export default function EducationCard({ entry }: EducationCardProps) {
             alt={entry.title}
             fill
             className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
+            style={entry.imagePosition ? { objectPosition: entry.imagePosition } : undefined}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
           <span
@@ -104,7 +105,7 @@ export default function EducationCard({ entry }: EducationCardProps) {
           ))}
           <button
             onClick={() => setShowModal(true)}
-            className="text-xs text-accent/70 hover:text-accent transition-colors duration-200 ml-auto"
+            className="text-xs text-[#FFD700]/70 hover:text-[#FFD700] transition-colors duration-200 ml-auto"
           >
             See more →
           </button>

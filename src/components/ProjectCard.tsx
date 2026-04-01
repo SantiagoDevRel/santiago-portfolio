@@ -14,7 +14,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <>
-      <div className="rounded-xl border border-white/10 bg-white/[0.02] p-6 hover:border-accent/20 transition-all duration-300 min-h-[300px] flex flex-col">
+      <div className="rounded-xl border border-white/10 bg-white/[0.02] p-6 hover:border-accent/20 transition-all duration-300 h-full flex flex-col">
         <h3 className="text-xs font-bold tracking-widest uppercase text-accent/80">
           {project.company}
         </h3>
@@ -51,7 +51,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           ))}
           <button
             onClick={() => setShowModal(true)}
-            className="text-xs text-accent/70 hover:text-accent transition-colors duration-200 ml-auto"
+            className="text-xs text-[#FFD700]/70 hover:text-[#FFD700] transition-colors duration-200 ml-auto"
           >
             See more →
           </button>
@@ -64,17 +64,17 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           onClick={() => setShowModal(false)}
         >
           <div
-            className="bg-[#0a0a0a] border border-white/10 rounded-2xl max-w-lg w-full mx-4 p-6 max-h-[80vh] overflow-y-auto"
+            className="relative bg-[#0a0a0a] border border-white/10 rounded-2xl max-w-lg w-full mx-4 p-6 max-h-[80vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg font-bold">{project.title}</h2>
-              <button
-                onClick={() => setShowModal(false)}
-                className="text-foreground/40 hover:text-foreground text-xl"
-              >
-                ×
-              </button>
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 text-white/70 hover:text-[#FFD700] hover:bg-white/20 transition-colors"
+            >
+              ×
+            </button>
+            <div className="mb-4">
+              <h2 className="text-lg font-bold pr-10">{project.title}</h2>
             </div>
             <p className="text-xs font-bold tracking-widest uppercase text-accent/80 mb-1">
               {project.company}

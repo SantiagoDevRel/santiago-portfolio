@@ -58,7 +58,7 @@ export default function EventsPage() {
           onClick={() => setActiveYear(null)}
           className={`text-xs px-3 py-1.5 rounded-full border transition-all duration-200 ${
             activeYear === null
-              ? "border-accent/40 text-accent"
+              ? "border-[#FFD700]/40 text-[#FFD700]"
               : "border-white/[0.06] text-foreground/25"
           }`}
         >
@@ -70,7 +70,7 @@ export default function EventsPage() {
             onClick={() => setActiveYear(activeYear === year ? null : year)}
             className={`text-xs px-3 py-1.5 rounded-full border transition-all duration-200 ${
               activeYear === year
-                ? "border-accent/40 text-accent"
+                ? "border-[#FFD700]/40 text-[#FFD700]"
                 : "border-white/[0.06] text-foreground/25"
             }`}
           >
@@ -83,7 +83,10 @@ export default function EventsPage() {
         key={activeFilter + (activeYear ?? "all")}
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 animate-[fadeIn_100ms_ease-in]"
       >
-        {filtered.map((event) => (
+        {[...filtered].sort((a, b) => {
+          if (b.year !== a.year) return b.year - a.year;
+          return 0;
+        }).map((event) => (
           <EventCard key={event.id} event={event} />
         ))}
       </div>

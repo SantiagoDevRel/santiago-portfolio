@@ -73,6 +73,7 @@ export const events: MapEvent[] = [
       github: null,
     },
     imageUrl: "/images/events/medellin_astar_hackathon_2023.jpg",
+    imagePosition: "top",
     mapDescription: "Hackathon winner. NFT credentials on Astar network.",
     mapPin: true,
   },
@@ -109,6 +110,7 @@ export const events: MapEvent[] = [
       github: null,
     },
     imageUrl: "/images/events/european_blockchain_convention_2023.jpg",
+    imagePosition: "top",
     mapPin: true,
   },
   {
@@ -275,6 +277,7 @@ export const events: MapEvent[] = [
       github: null,
     },
     imageUrl: "/images/events/eth_bucharest.jpg",
+    imagePosition: "center 20%",
     mapPin: true,
   },
   {
@@ -344,6 +347,7 @@ export const events: MapEvent[] = [
       github: null,
     },
     imageUrl: "/images/events/eth_zurich.jpg",
+    imagePosition: "center 20%",
     mapPin: true,
   },
   {
@@ -413,6 +417,7 @@ export const events: MapEvent[] = [
       github: null,
     },
     imageUrl: "/images/events/merge_madrid.png",
+    imagePosition: "center 20%",
     mapPin: true,
   },
   {
@@ -980,6 +985,7 @@ export const events: MapEvent[] = [
       youtube: null, github: null, live: null, linkedin: null,
     },
     imageUrl: "/images/events/patagonia1.jpg",
+    imagePosition: "center 20%",
     imageGallery: [
       "/images/events/patagonia1.jpg",
       "/images/events/patagonia2.jpg",
