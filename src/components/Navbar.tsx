@@ -13,7 +13,7 @@ const navLinks = [
   { href: "/on-the-ground", label: "On The Ground" },
   { href: "/content", label: "Content" },
   { href: "/built", label: "Built" },
-  { href: "/about", label: "About" },
+  { href: "/how-i-work", label: "How I Work" },
 ];
 
 const workDropdown = [
