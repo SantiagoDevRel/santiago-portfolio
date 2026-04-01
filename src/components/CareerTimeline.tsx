@@ -48,13 +48,22 @@ export default function CareerTimeline() {
   const [activeYear, setActiveYear] = useState<number | null>(null);
 
   const entriesForYear = activeYear
-    ? career.filter((e) => getSpanYears(e).includes(activeYear))
+    ? career
+        .filter((e) => getSpanYears(e).includes(activeYear))
+        // Crimson only shows in 2021-2022
+        .filter((e) => !(e.id === "crimson-education-2021" && activeYear >= 2023))
+        // Sort: non-part-time first, then by start year descending
+        .sort((a, b) => {
+          if (a.isPartTime && !b.isPartTime) return 1;
+          if (!a.isPartTime && b.isPartTime) return -1;
+          return parseYear(b.period.start) - parseYear(a.period.start);
+        })
     : [];
 
   return (
     <section className="py-16 px-6 max-w-5xl mx-auto">
       <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 tracking-tight">
-        Career
+        Career Timeline
       </h2>
 
       {/* Timeline track */}

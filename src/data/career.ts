@@ -207,7 +207,6 @@ export const career: CareerEntry[] = [
       { label: "ETHiopia Residency builders", value: "57" },
       { label: "Patagonia Residency founders", value: "17" },
       { label: "EFDevcon Buenos Aires", value: "508 attendees" },
-      { label: "Pitch Day startups to incubation", value: "5 / 10" },
     ],
     category: "Current",
     bullets: [

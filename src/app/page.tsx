@@ -12,7 +12,33 @@ import { projects } from "@/data/projects";
 import Link from "next/link";
 
 export default function Home() {
-  const featuredEducation = education.filter((e) => e.featured).slice(0, 6);
+  // Manual content order for homepage
+  const contentIds = [
+    "web3js-video-series-2024",
+    "swisstronik-deploy-erc20-video",
+    "chainsafe-hackathon-track-2024",
+    "dezentralized-voices-interview-2024",
+    "swisstronik-dev-survey-2023",
+    "ech-ecosystem-demo-2024",
+  ];
+  const featuredEducation = contentIds
+    .map((id) => education.find((e) => e.id === id))
+    .filter(Boolean) as typeof education;
+
+  // Manual event order for homepage
+  const eventIds = [
+    "lisk-edge-city-patagonia-2025",
+    "lisk-africa-tour-2025",
+    "ethiopia-builders-residency-2025",
+    "ayahq-lisk-roadshow-2025",
+    "empower-devcon-buenos-aires-2025",
+    "lisk-aleph-founders-track-2025",
+  ];
+  const recentEvents = eventIds
+    .map((id) => events.find((e) => e.id === id))
+    .filter(Boolean) as typeof events;
+
+  const recentProjects = [...projects].reverse().slice(0, 6);
 
   return (
     <>
@@ -85,7 +111,7 @@ export default function Home() {
           </Link>
         </div>
         <HomeCarousel>
-          {events.slice(0, 8).map((event) => (
+          {recentEvents.map((event) => (
             <div key={event.id} className="min-w-[300px] max-w-[300px] shrink-0">
               <EventCard event={event} />
             </div>
@@ -112,7 +138,7 @@ export default function Home() {
           </Link>
         </div>
         <HomeCarousel>
-          {projects.slice(0, 6).map((project) => (
+          {recentProjects.map((project) => (
             <div key={project.id} className="min-w-[300px] max-w-[300px] shrink-0">
               <ProjectCard project={project} />
             </div>
