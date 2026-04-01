@@ -60,7 +60,7 @@ function TestimonialCard({
         onMouseLeave={() => window.dispatchEvent(new Event("spotlight:show"))}
         className="rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-md p-6 h-full flex flex-col transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/10 hover:border-orange-500/20 overflow-hidden"
       >
-        <span className="text-[48px] leading-none text-[#FF6B35] font-serif select-none">"</span>
+        <span className="text-[48px] leading-none text-[#FF6B35] font-serif select-none">&ldquo;</span>
 
         <p className="text-[15px] leading-[1.7] text-foreground/90 italic mt-1 mb-2 line-clamp-4">
           {t.text}
@@ -134,7 +134,7 @@ function TestimonialModal({
           <X size={18} />
         </button>
 
-        <span className="text-[48px] leading-none text-[#FF6B35] font-serif select-none">"</span>
+        <span className="text-[48px] leading-none text-[#FF6B35] font-serif select-none">&ldquo;</span>
         <p className="text-[15px] leading-[1.7] text-foreground/90 italic mt-1 mb-6">
           {t.text}
         </p>
