@@ -28,7 +28,7 @@ export default function HorizontalScroll({ title, children }: HorizontalScrollPr
             onClick={scrollPrev}
             className="w-8 h-8 rounded-full bg-[#1a1a1a] border border-white/10 flex items-center justify-center hover:border-white/20 transition-colors"
           >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00ff88" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFD700" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M15 18l-6-6 6-6" />
             </svg>
           </button>
@@ -36,7 +36,7 @@ export default function HorizontalScroll({ title, children }: HorizontalScrollPr
             onClick={scrollNext}
             className="w-8 h-8 rounded-full bg-[#1a1a1a] border border-white/10 flex items-center justify-center hover:border-white/20 transition-colors"
           >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00ff88" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFD700" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </button>

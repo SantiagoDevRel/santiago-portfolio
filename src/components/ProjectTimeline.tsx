@@ -7,10 +7,10 @@ import { career, CareerEntry } from "@/data/career";
 
 const categoryColors: Record<string, string> = {
   Education: "#ff88cc",
-  "Solidity Developer": "#00ff88",
+  "Solidity Developer": "#FFD700",
   DevRel: "#00aaff",
   Founder: "#ff6600",
-  Current: "#00ff88",
+  Current: "#FFD700",
 };
 
 // Group entries by year range label, newest first
@@ -46,7 +46,7 @@ export default function ProjectTimeline() {
         <div key={group.label} className="mb-12">
           {/* Year section label */}
           <div className="flex items-center gap-4 mb-6">
-            <span className="text-sm font-bold text-accent tracking-wide uppercase">
+            <span className="text-sm font-bold text-[#FFD700] tracking-wide uppercase">
               {group.label}
             </span>
             <div className="flex-1 h-px bg-white/10" />
@@ -66,7 +66,7 @@ export default function ProjectTimeline() {
 
 function TimelineEntry({ entry }: { entry: CareerEntry }) {
   const isCurrent = entry.category === "Current";
-  const color = categoryColors[entry.category] ?? "#00ff88";
+  const color = categoryColors[entry.category] ?? "#FFD700";
 
   return (
     <div className="flex gap-6">
@@ -82,7 +82,7 @@ function TimelineEntry({ entry }: { entry: CareerEntry }) {
           <div
             className={`w-3 h-3 rounded-full border-2 shrink-0 ${
               isCurrent
-                ? "bg-accent border-accent"
+                ? "bg-[#FFD700] border-[#FFD700]"
                 : "bg-transparent border-white/30"
             }`}
           />
@@ -92,7 +92,7 @@ function TimelineEntry({ entry }: { entry: CareerEntry }) {
       </div>
 
       {/* Right column: card */}
-      <div className="border border-white/10 rounded-xl p-6 flex-1 hover:border-accent/30 transition-colors">
+      <div className="border border-white/10 rounded-xl p-6 flex-1 hover:border-[#FFD700]/30 transition-colors">
         <div className="flex items-start justify-between flex-wrap gap-2">
           <div>
             <h3 className="text-lg font-bold">{entry.company}</h3>
@@ -121,7 +121,7 @@ function TimelineEntry({ entry }: { entry: CareerEntry }) {
             {entry.metrics.map((m) => (
               <span
                 key={m.label}
-                className="text-xs px-2 py-1 rounded-full bg-accent/10 text-accent"
+                className="text-xs px-2 py-1 rounded-full bg-[#FFD700]/10 text-[#FFD700]"
               >
                 {m.label}: {m.value}
               </span>
@@ -138,7 +138,7 @@ function TimelineEntry({ entry }: { entry: CareerEntry }) {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs px-3 py-1 rounded-full border border-white/10 text-foreground/50 hover:text-accent hover:border-accent/30 transition-colors"
+                className="text-xs px-3 py-1 rounded-full border border-white/10 text-foreground/50 hover:text-[#FFD700] hover:border-[#FFD700]/30 transition-colors"
               >
                 {link.label}
               </a>

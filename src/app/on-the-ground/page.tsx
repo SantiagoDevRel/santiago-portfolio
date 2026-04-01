@@ -7,7 +7,7 @@ import FilterBar from "@/components/FilterBar";
 import { events } from "@/data/events";
 
 const categoryColors: Record<string, string> = {
-  Workshop: "#00ff88",
+  Workshop: "#FFD700",
   Conference: "#00aaff",
   Hackathon: "#ffcc00",
   Residency: "#ff6600",

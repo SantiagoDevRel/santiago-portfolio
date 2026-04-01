@@ -18,7 +18,7 @@ export default function CrimsonPage() {
             href="https://www.guinnessworldrecords.com/world-records/most-sandwiches-made-in-one-hour"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block mt-4 text-xs text-accent/70 hover:text-accent transition-colors"
+            className="inline-block mt-4 text-xs text-[#FFD700]/70 hover:text-[#FFD700] transition-colors"
           >
             Verified Guinness World Record →
           </a>

@@ -109,7 +109,7 @@ export default function EducationModal({ entry, onClose }: EducationModalProps) 
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-foreground/35 hover:text-accent transition-colors"
+                  className="text-xs text-foreground/35 hover:text-[#FFD700] transition-colors"
                 >
                   {link.label}
                 </a>

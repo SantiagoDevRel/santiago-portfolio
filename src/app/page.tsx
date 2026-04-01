@@ -22,15 +22,15 @@ export default function Home() {
       <section className="py-12 px-6 max-w-4xl mx-auto">
         <div className="flex justify-center gap-8 md:gap-16 flex-wrap">
           <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#FFD700] via-[#FF6B35] to-[#00C853] bg-clip-text text-transparent">20+</div>
+            <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#FFD700] via-[#FF6B35] to-[#C8400A] bg-clip-text text-transparent">20+</div>
             <div className="text-xs text-foreground/40 mt-1">Countries</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#FFD700] via-[#FF6B35] to-[#00C853] bg-clip-text text-transparent">30+</div>
+            <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#FFD700] via-[#FF6B35] to-[#C8400A] bg-clip-text text-transparent">30+</div>
             <div className="text-xs text-foreground/40 mt-1">Web3 Events</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#FFD700] via-[#FF6B35] to-[#00C853] bg-clip-text text-transparent">1,000+</div>
+            <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#FFD700] via-[#FF6B35] to-[#C8400A] bg-clip-text text-transparent">1,000+</div>
             <div className="text-xs text-foreground/40 mt-1">Developers</div>
           </div>
         </div>
@@ -52,7 +52,7 @@ export default function Home() {
           </div>
           <Link
             href="/content"
-            className="text-sm text-foreground/40 hover:text-accent transition-colors duration-200"
+            className="text-sm text-foreground/40 hover:text-[#FFD700] transition-colors duration-200"
           >
             See all →
           </Link>
@@ -79,7 +79,7 @@ export default function Home() {
           </div>
           <Link
             href="/on-the-ground"
-            className="text-sm text-foreground/40 hover:text-accent transition-colors duration-200"
+            className="text-sm text-foreground/40 hover:text-[#FFD700] transition-colors duration-200"
           >
             See all →
           </Link>
@@ -106,7 +106,7 @@ export default function Home() {
           </div>
           <Link
             href="/built"
-            className="text-sm text-foreground/40 hover:text-accent transition-colors duration-200"
+            className="text-sm text-foreground/40 hover:text-[#FFD700] transition-colors duration-200"
           >
             See all →
           </Link>

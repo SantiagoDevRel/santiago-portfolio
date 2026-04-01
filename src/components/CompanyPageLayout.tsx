@@ -71,7 +71,7 @@ export default function CompanyPageLayout({
         href={entry.companyUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-xs text-foreground/35 hover:text-accent transition-colors duration-200 mb-12 inline-block"
+        className="text-xs text-foreground/35 hover:text-[#FFD700] transition-colors duration-200 mb-12 inline-block"
       >
         Visit website →
       </a>
@@ -165,7 +165,7 @@ function MetricsCarousel({
           height="14"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#00ff88"
+          stroke="#FFD700"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -180,9 +180,9 @@ function MetricsCarousel({
           {metrics.map((m) => (
             <div
               key={m.label}
-              className="shrink-0 rounded-xl bg-[#111] border border-accent/20 px-5 py-4 min-w-[160px]"
+              className="shrink-0 rounded-xl bg-[#111] border border-[#FFD700]/20 px-5 py-4 min-w-[160px]"
             >
-              <div className="text-xl font-bold bg-gradient-to-r from-[#FFD700] via-[#FF6B35] to-[#00C853] bg-clip-text text-transparent">{m.value}</div>
+              <div className="text-xl font-bold bg-gradient-to-r from-[#FFD700] via-[#FF6B35] to-[#C8400A] bg-clip-text text-transparent">{m.value}</div>
               <div className="text-xs text-foreground/40 mt-1">{m.label}</div>
             </div>
           ))}
@@ -199,7 +199,7 @@ function MetricsCarousel({
           height="14"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#00ff88"
+          stroke="#FFD700"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"

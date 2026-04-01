@@ -12,7 +12,7 @@ const config: Config = {
       colors: {
         background: "#0a0a0a",
         foreground: "#ffffff",
-        accent: "#00ff88",
+        accent: "#FFD700",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "Inter", "sans-serif"],

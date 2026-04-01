@@ -14,8 +14,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <>
-      <div className="rounded-xl border border-white/10 bg-white/[0.02] p-6 hover:border-accent/20 transition-all duration-300 h-full flex flex-col">
-        <h3 className="text-xs font-bold tracking-widest uppercase text-accent/80">
+      <div className="rounded-xl border border-white/10 bg-white/[0.02] p-6 hover:border-[#FFD700]/15 transition-all duration-300 h-full flex flex-col">
+        <h3 className="text-xs font-bold tracking-widest uppercase text-[#FFD700]/80">
           {project.company}
         </h3>
         <p className="text-sm text-foreground/40 mt-1.5">
@@ -30,7 +30,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="text-[11px] px-2 py-0.5 rounded-full bg-accent/8 text-accent/70 border border-accent/10"
+              className="text-[11px] px-2 py-0.5 rounded-full bg-[#FF6B35]/8 text-[#FF6B35]/60 border border-[#FF6B35]/10"
             >
               {tag}
             </span>
@@ -44,7 +44,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs text-foreground/35 hover:text-accent transition-colors duration-200"
+              className="text-xs text-foreground/35 hover:text-[#FFD700] transition-colors duration-200"
             >
               {link.label}
             </a>
@@ -76,7 +76,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <div className="mb-4">
               <h2 className="text-lg font-bold pr-10">{project.title}</h2>
             </div>
-            <p className="text-xs font-bold tracking-widest uppercase text-accent/80 mb-1">
+            <p className="text-xs font-bold tracking-widest uppercase text-[#FFD700]/80 mb-1">
               {project.company}
             </p>
             <p className="text-sm text-foreground/45 mb-3">
@@ -104,7 +104,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               <ul className="space-y-2 mb-4">
                 {project.highlights.map((h, i) => (
                   <li key={i} className="text-xs text-foreground/45 flex gap-2">
-                    <span className="text-accent/60 shrink-0">—</span>
+                    <span className="text-[#FFD700]/60 shrink-0">—</span>
                     {h}
                   </li>
                 ))}
@@ -115,7 +115,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-[11px] px-2 py-0.5 rounded-full bg-accent/8 text-accent/70 border border-accent/10"
+                  className="text-[11px] px-2 py-0.5 rounded-full bg-[#FF6B35]/8 text-[#FF6B35]/60 border border-[#FF6B35]/10"
                 >
                   {tag}
                 </span>
@@ -129,7 +129,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-accent/70 hover:text-accent transition-colors duration-200"
+                  className="text-xs text-[#FFD700]/70 hover:text-[#FFD700] transition-colors duration-200"
                 >
                   {link.label}
                 </a>

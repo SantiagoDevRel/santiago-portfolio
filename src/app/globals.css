@@ -1,4 +1,4 @@
-/* Global styles — dark theme with green accent */
+/* Global styles — dark theme with warm gold accent */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,7 +6,9 @@
 :root {
   --background: #0a0a0a;
   --foreground: #ffffff;
-  --accent: #00ff88;
+  --accent: #FFD700;
+  --accent-orange: #FF6B35;
+  --accent-sienna: #C8400A;
 }
 
 body {

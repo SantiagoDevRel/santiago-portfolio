@@ -25,7 +25,7 @@ export default function EducationCard({ entry }: EducationCardProps) {
 
   return (
     <>
-    <div className="rounded-xl border border-white/10 bg-white/[0.02] overflow-hidden hover:border-accent/20 transition-all duration-300 group flex flex-col h-full">
+    <div className="rounded-xl border border-white/10 bg-white/[0.02] overflow-hidden hover:border-[#FFD700]/15 transition-all duration-300 group flex flex-col h-full">
       {/* Cover: survey chart, image, or category placeholder */}
       {entry.id === "swisstronik-dev-survey-2023" ? (
         <div className="h-[160px] shrink-0 overflow-hidden">
@@ -98,7 +98,7 @@ export default function EducationCard({ entry }: EducationCardProps) {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs text-foreground/35 hover:text-accent transition-colors duration-200"
+              className="text-xs text-foreground/35 hover:text-[#FFD700] transition-colors duration-200"
             >
               {link.label}
             </a>

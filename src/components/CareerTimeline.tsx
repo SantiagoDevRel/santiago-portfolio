@@ -38,10 +38,10 @@ const allYears = Array.from(
 
 const categoryColors: Record<string, string> = {
   Education: "#ff88cc",
-  "Solidity Developer": "#00ff88",
+  "Solidity Developer": "#FFD700",
   DevRel: "#00aaff",
   Founder: "#ff6600",
-  Current: "#00ff88",
+  Current: "#FFD700",
 };
 
 export default function CareerTimeline() {
@@ -81,7 +81,7 @@ export default function CareerTimeline() {
                 <span
                   className={`text-sm font-semibold transition-colors duration-200 ${
                     isActive
-                      ? "bg-gradient-to-r from-[#FFD700] via-[#FF6B35] to-[#00C853] bg-clip-text text-transparent"
+                      ? "bg-gradient-to-r from-[#FFD700] via-[#FF6B35] to-[#C8400A] bg-clip-text text-transparent"
                       : "text-foreground/40 group-hover:text-foreground/70"
                   }`}
                 >
@@ -115,7 +115,7 @@ export default function CareerTimeline() {
 }
 
 function CareerDetailCard({ entry }: { entry: CareerEntry }) {
-  const color = categoryColors[entry.category] ?? "#00ff88";
+  const color = categoryColors[entry.category] ?? "#FFD700";
   const logoInfo = companyLogos[entry.company] ?? null;
 
   return (
@@ -181,7 +181,7 @@ function CareerDetailCard({ entry }: { entry: CareerEntry }) {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs text-foreground/35 hover:text-accent transition-colors duration-200"
+              className="text-xs text-foreground/35 hover:text-[#FFD700] transition-colors duration-200"
             >
               {link.label}
             </a>
@@ -192,7 +192,7 @@ function CareerDetailCard({ entry }: { entry: CareerEntry }) {
       <div className="mt-5 pt-4 border-t border-white/[0.06]">
         <Link
           href="/built"
-          className="text-xs font-medium text-accent/80 hover:text-accent transition-colors duration-200"
+          className="text-xs font-medium text-[#FFD700]/80 hover:text-[#FFD700] transition-colors duration-200"
         >
           See full work →
         </Link>

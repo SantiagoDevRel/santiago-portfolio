@@ -5,7 +5,7 @@ export default function AboutPage() {
       <h1 className="text-4xl font-bold mb-8">About</h1>
 
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-4 text-accent">Story</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-[#FFD700]">Story</h2>
         <p className="text-foreground/70 leading-relaxed">
           {/* TODO: Fill in personal story */}
           Developer Advocate passionate about bridging Web3 and AI technologies
@@ -14,7 +14,7 @@ export default function AboutPage() {
       </section>
 
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-4 text-accent">Stack</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-[#FFD700]">Stack</h2>
         <div className="flex flex-wrap gap-3">
           {[
             "TypeScript",
@@ -40,7 +40,7 @@ export default function AboutPage() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-4 text-accent">Philosophy</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-[#FFD700]">Philosophy</h2>
         <p className="text-foreground/70 leading-relaxed">
           {/* TODO: Fill in philosophy */}
           Build tools that matter. Ship to real users in real markets. Prioritize

@@ -7,7 +7,7 @@ import FilterBar from "@/components/FilterBar";
 import { projects } from "@/data/projects";
 
 const categoryColors: Record<string, string> = {
-  "Smart Contract": "#00ff88",
+  "Smart Contract": "#FFD700",
   Hackathon: "#ffcc00",
 };
 

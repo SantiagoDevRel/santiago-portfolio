@@ -44,7 +44,7 @@ export default function CompanyHero({
         href={websiteUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-xs text-foreground/35 hover:text-accent transition-colors duration-200"
+        className="text-xs text-foreground/35 hover:text-[#FFD700] transition-colors duration-200"
       >
         Visit website →
       </a>

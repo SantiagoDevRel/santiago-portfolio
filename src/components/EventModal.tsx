@@ -7,7 +7,7 @@ import { MapEvent, EventCategory } from "@/data/events";
 import SurveyChart from "./SurveyChart";
 
 const categoryColors: Record<EventCategory, string> = {
-  Workshop: "#00ff88",
+  Workshop: "#FFD700",
   Conference: "#00aaff",
   Residency: "#ff6600",
   "Field Trip": "#ff00aa",
@@ -145,7 +145,7 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                   key={i}
                   className="text-xs text-foreground/45 flex gap-2"
                 >
-                  <span className="text-accent/60 shrink-0">—</span>
+                  <span className="text-[#FFD700]/60 shrink-0">—</span>
                   {h}
                 </li>
               ))}
@@ -163,7 +163,7 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                     href={url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-foreground/35 hover:text-accent transition-colors"
+                    className="text-xs text-foreground/35 hover:text-[#FFD700] transition-colors"
                   >
                     {label}
                   </a>
