@@ -12,7 +12,7 @@ import EventModal from "./EventModal";
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
 const categoryColors: Record<EventCategory, string> = {
-  Workshop: "#00ff88",
+  Workshop: "#FF6B35",
   Conference: "#00aaff",
   Residency: "#ff6600",
   "Field Trip": "#ff00aa",
@@ -154,7 +154,7 @@ export default function WorldMap() {
 
                   <button
                     onClick={() => openModal(selectedEvent)}
-                    className="text-[11px] text-[#FFD700]/70 hover:text-[#FFD700] mt-3 transition-colors duration-200"
+                    className="text-[11px] text-[#FF6B35]/70 hover:text-[#FF6B35] mt-3 transition-colors duration-200"
                   >
                     See more →
                   </button>
@@ -172,7 +172,7 @@ export default function WorldMap() {
             onClick={() => { setActiveCategory(null); setSelectedEvent(null); }}
             className={`flex items-center gap-2 text-xs px-3 py-1.5 rounded-full border transition-all duration-200 ${
               activeCategory === null
-                ? "bg-gradient-to-r from-[#FFD700] via-[#FF6B35] to-[#C8400A] text-background border-transparent font-semibold"
+                ? "bg-gradient-to-r from-[#FF6B35] to-[#C8400A] text-background border-transparent font-semibold"
                 : "border-white/[0.08] text-foreground/40 hover:text-foreground/60 hover:border-white/15"
             }`}
           >
@@ -187,7 +187,7 @@ export default function WorldMap() {
                 onClick={() => { setActiveCategory(isActive ? null : category); setSelectedEvent(null); }}
                 className={`flex items-center gap-2 text-xs px-3 py-1.5 rounded-full border transition-all duration-200 ${
                   isActive
-                    ? "bg-gradient-to-r from-[#FFD700] via-[#FF6B35] to-[#C8400A] text-background border-transparent font-semibold"
+                    ? "bg-gradient-to-r from-[#FF6B35] to-[#C8400A] text-background border-transparent font-semibold"
                     : "border-white/[0.08] text-foreground/40 hover:text-foreground/60 hover:border-white/15"
                 }`}
               >

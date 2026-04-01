@@ -7,7 +7,7 @@ import { MapEvent, EventCategory } from "@/data/events";
 import SurveyChart from "./SurveyChart";
 
 const categoryColors: Record<EventCategory, string> = {
-  Workshop: "#FFD700",
+  Workshop: "#FF6B35",
   Conference: "#00aaff",
   Residency: "#ff6600",
   "Field Trip": "#ff00aa",
@@ -50,7 +50,7 @@ export default function EventModal({ event, onClose }: EventModalProps) {
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 text-white/70 hover:text-[#FFD700] hover:bg-white/20 transition-colors"
+          className="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 text-white/70 hover:text-[#FF6B35] hover:bg-white/20 transition-colors"
         >
           ×
         </button>
@@ -145,7 +145,7 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                   key={i}
                   className="text-xs text-foreground/45 flex gap-2"
                 >
-                  <span className="text-[#FFD700]/60 shrink-0">—</span>
+                  <span className="text-[#FF6B35]/60 shrink-0">—</span>
                   {h}
                 </li>
               ))}
@@ -163,7 +163,7 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                     href={url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-foreground/35 hover:text-[#FFD700] transition-colors"
+                    className="text-xs text-foreground/35 hover:text-[#FF6B35] transition-colors"
                   >
                     {label}
                   </a>

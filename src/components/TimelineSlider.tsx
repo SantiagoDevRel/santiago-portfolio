@@ -18,7 +18,7 @@ export default function TimelineSlider({
         onClick={() => onYearChange(null)}
         className={`text-sm px-3 py-1 rounded-full transition-colors ${
           selectedYear === null
-            ? "bg-[#FFD700] text-background"
+            ? "bg-[#FF6B35] text-background"
             : "text-foreground/50 hover:text-foreground"
         }`}
       >
@@ -30,7 +30,7 @@ export default function TimelineSlider({
           onClick={() => onYearChange(year)}
           className={`text-sm px-3 py-1 rounded-full transition-colors ${
             selectedYear === year
-              ? "bg-[#FFD700] text-background"
+              ? "bg-[#FF6B35] text-background"
               : "text-foreground/50 hover:text-foreground"
           }`}
         >

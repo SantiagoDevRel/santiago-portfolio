@@ -38,14 +38,14 @@ const allYears = Array.from(
 
 const categoryColors: Record<string, string> = {
   Education: "#ff88cc",
-  "Solidity Developer": "#FFD700",
+  "Solidity Developer": "#FF6B35",
   DevRel: "#00aaff",
   Founder: "#ff6600",
-  Current: "#FFD700",
+  Current: "#FF6B35",
 };
 
 export default function CareerTimeline() {
-  const [activeYear, setActiveYear] = useState<number | null>(null);
+  const [activeYear, setActiveYear] = useState<number | null>(2026);
 
   const entriesForYear = activeYear
     ? career
@@ -83,14 +83,14 @@ export default function CareerTimeline() {
                 <div
                   className={`w-11 h-11 rounded-full bg-[#1a1a1a] transition-all duration-200 cursor-pointer ${
                     isActive
-                      ? "border-2 border-[#FFD700] shadow-[0_0_12px_rgba(255,215,0,0.3)] scale-110"
+                      ? "border-2 border-[#FF6B35] shadow-[0_0_12px_rgba(255,107,53,0.3)] scale-110"
                       : "border border-white/[0.08] group-hover:border-white/20 group-hover:scale-105 group-hover:shadow-[0_0_8px_rgba(255,255,255,0.05)]"
                   }`}
                 />
                 <span
                   className={`text-sm font-semibold transition-colors duration-200 ${
                     isActive
-                      ? "bg-gradient-to-r from-[#FFD700] via-[#FF6B35] to-[#C8400A] bg-clip-text text-transparent"
+                      ? "bg-gradient-to-r from-[#FF6B35] to-[#C8400A] bg-clip-text text-transparent"
                       : "text-foreground/40 group-hover:text-foreground/70"
                   }`}
                 >
@@ -124,11 +124,14 @@ export default function CareerTimeline() {
 }
 
 function CareerDetailCard({ entry }: { entry: CareerEntry }) {
-  const color = categoryColors[entry.category] ?? "#FFD700";
+  const color = categoryColors[entry.category] ?? "#FF6B35";
   const logoInfo = companyLogos[entry.company] ?? null;
 
   return (
-    <div className="rounded-xl border border-white/10 bg-white/[0.02] p-6 backdrop-blur-sm">
+    <div
+      onMouseEnter={() => window.dispatchEvent(new Event("spotlight:hide"))}
+      onMouseLeave={() => window.dispatchEvent(new Event("spotlight:show"))}
+      className="rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-md p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/10 hover:border-orange-500/20">
       <div className="flex items-start justify-between flex-wrap gap-3">
         <div className="flex items-center gap-3">
           {logoInfo && (
@@ -190,7 +193,7 @@ function CareerDetailCard({ entry }: { entry: CareerEntry }) {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs text-foreground/35 hover:text-[#FFD700] transition-colors duration-200"
+              className="text-xs text-foreground/35 hover:text-[#FF6B35] transition-colors duration-200"
             >
               {link.label}
             </a>
@@ -201,7 +204,7 @@ function CareerDetailCard({ entry }: { entry: CareerEntry }) {
       <div className="mt-5 pt-4 border-t border-white/[0.06]">
         <Link
           href="/built"
-          className="text-xs font-medium text-[#FFD700]/80 hover:text-[#FFD700] transition-colors duration-200"
+          className="text-xs font-medium text-[#FF6B35]/80 hover:text-[#FF6B35] transition-colors duration-200"
         >
           See full work →
         </Link>

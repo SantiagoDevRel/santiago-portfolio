@@ -1,8 +1,39 @@
-// ProjectCard — displays a project with company header, role/period, description, tags, and links
+// ProjectCard — displays a project with icon, status badge, name, role/period, description, tags, and links
 "use client";
 
 import { useState } from "react";
 import { Project } from "@/data/projects";
+import {
+  Building2,
+  Ticket,
+  GitBranch,
+  Zap,
+  Bot,
+  Globe,
+  Star,
+  type LucideIcon,
+} from "lucide-react";
+
+const iconMap: Record<string, LucideIcon> = {
+  Building2,
+  Ticket,
+  GitBranch,
+  Zap,
+  Bot,
+  Globe,
+  Star,
+};
+
+const statusConfig: Record<string, { label: string; color: string }> = {
+  live: { label: "Live", color: "#22c55e" },
+  "open-source": { label: "Open Source", color: "#888" },
+  hackathon: { label: "Hackathon", color: "#a78bfa" },
+};
+
+function getYear(period: { start: string; end: string }) {
+  const match = period.end.match(/\d{4}/);
+  return match ? match[0] : period.end;
+}
 
 interface ProjectCardProps {
   project: Project;
@@ -11,18 +42,47 @@ interface ProjectCardProps {
 export default function ProjectCard({ project }: ProjectCardProps) {
   const [showModal, setShowModal] = useState(false);
   const visibleLinks = project.links.slice(0, 2);
+  const Icon = project.icon ? iconMap[project.icon] : null;
+  const status = project.status ? statusConfig[project.status] : null;
+
+  const cardBorder = project.featured
+    ? "border-[rgba(255,107,53,0.25)]"
+    : "border-white/[0.08]";
+  const cardShadow = project.featured
+    ? "shadow-[0_0_20px_rgba(255,107,53,0.08)]"
+    : "";
 
   return (
     <>
-      <div className="rounded-xl border border-white/10 bg-white/[0.02] p-6 hover:border-[#FFD700]/15 transition-all duration-300 h-full flex flex-col">
-        <h3 className="text-xs font-bold tracking-widest uppercase text-[#FFD700]/80">
-          {project.company}
-        </h3>
-        <p className="text-sm text-foreground/40 mt-1.5">
-          {project.role} · {project.period.start} – {project.period.end}
-        </p>
+      <div
+        onMouseEnter={() => window.dispatchEvent(new Event("spotlight:hide"))}
+        onMouseLeave={() => window.dispatchEvent(new Event("spotlight:show"))}
+        className={`rounded-2xl border ${cardBorder} ${cardShadow} bg-white/[0.03] backdrop-blur-md p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/10 hover:border-orange-500/20 h-full flex flex-col relative`}
+      >
+        {/* Status badge */}
+        {status && (
+          <span
+            className="absolute top-3 right-3 flex items-center gap-1.5 text-[11px] px-2 py-0.5 rounded-full bg-[#1a1a1a]"
+            style={{ border: `1px solid ${status.color}4d`, color: status.color }}
+          >
+            <span
+              className="w-1.5 h-1.5 rounded-full"
+              style={{ backgroundColor: status.color }}
+            />
+            {status.label}
+          </span>
+        )}
 
-        <p className="text-sm text-foreground/55 mt-4 leading-relaxed line-clamp-2">
+        {/* Icon */}
+        {Icon && <Icon size={20} className="text-[#FF6B35] mb-3" />}
+
+        {/* Project name + year */}
+        <h3 className="text-xs font-bold tracking-widest uppercase">
+          <span className="text-[#FF6B35]/80">{project.title}</span>
+          <span className="text-foreground/40 ml-2">{getYear(project.period)}</span>
+        </h3>
+
+        <p className="text-sm text-foreground/55 mt-3 leading-relaxed line-clamp-2">
           {project.description}
         </p>
 
@@ -44,14 +104,14 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs text-foreground/35 hover:text-[#FFD700] transition-colors duration-200"
+              className="text-xs text-foreground/35 hover:text-[#FF6B35] transition-colors duration-200"
             >
               {link.label}
             </a>
           ))}
           <button
             onClick={() => setShowModal(true)}
-            className="text-xs text-[#FFD700]/70 hover:text-[#FFD700] transition-colors duration-200 ml-auto"
+            className="text-xs text-[#FF6B35]/70 hover:text-[#FF6B35] transition-colors duration-200 ml-auto"
           >
             See more →
           </button>
@@ -69,19 +129,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           >
             <button
               onClick={() => setShowModal(false)}
-              className="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 text-white/70 hover:text-[#FFD700] hover:bg-white/20 transition-colors"
+              className="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 text-white/70 hover:text-[#FF6B35] hover:bg-white/20 transition-colors"
             >
               ×
             </button>
-            <div className="mb-4">
+            <div className="mb-4 flex items-center gap-3">
+              {Icon && <Icon size={20} className="text-[#FF6B35]" />}
               <h2 className="text-lg font-bold pr-10">{project.title}</h2>
+              <span className="text-sm text-foreground/40">{getYear(project.period)}</span>
             </div>
-            <p className="text-xs font-bold tracking-widest uppercase text-[#FFD700]/80 mb-1">
-              {project.company}
-            </p>
-            <p className="text-sm text-foreground/45 mb-3">
-              {project.role} · {project.period.start} – {project.period.end}
-            </p>
             <p className="text-sm text-foreground/65 leading-relaxed mb-4">
               {project.description}
             </p>
@@ -104,7 +160,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               <ul className="space-y-2 mb-4">
                 {project.highlights.map((h, i) => (
                   <li key={i} className="text-xs text-foreground/45 flex gap-2">
-                    <span className="text-[#FFD700]/60 shrink-0">—</span>
+                    <span className="text-[#FF6B35]/60 shrink-0">-</span>
                     {h}
                   </li>
                 ))}
@@ -129,7 +185,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-[#FFD700]/70 hover:text-[#FFD700] transition-colors duration-200"
+                  className="text-xs text-[#FF6B35]/70 hover:text-[#FF6B35] transition-colors duration-200"
                 >
                   {link.label}
                 </a>

@@ -15,7 +15,7 @@ export default function Hero() {
         >
           <div
             className="w-[126px] h-[126px] md:w-[166px] md:h-[166px] rounded-full p-[3px]"
-            style={{ background: "linear-gradient(135deg, #FFD700, #FF6B35, #C8400A)" }}
+            style={{ background: "linear-gradient(135deg, #FF6B35, #C8400A)" }}
           >
             <Image
               src="/images/profile/linkedin_photo.jpg"
@@ -30,7 +30,7 @@ export default function Hero() {
 
         <div>
           <motion.h1
-            className="text-5xl md:text-7xl font-extrabold tracking-tighter bg-gradient-to-r from-[#FFD700] via-[#FF6B35] to-[#C8400A] bg-clip-text text-transparent pb-2"
+            className="text-5xl md:text-7xl font-extrabold tracking-tighter bg-gradient-to-r from-[#FF6B35] to-[#C8400A] bg-clip-text text-transparent pb-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -39,7 +39,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
-            className="mt-3 text-base md:text-lg text-foreground/45 max-w-lg tracking-wide"
+            className="mt-3 text-base md:text-lg text-foreground/70 max-w-lg tracking-wide"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}

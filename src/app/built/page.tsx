@@ -2,13 +2,16 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import ProjectCard from "@/components/ProjectCard";
 import FilterBar from "@/components/FilterBar";
 import { projects } from "@/data/projects";
 
 const categoryColors: Record<string, string> = {
-  "Smart Contract": "#FFD700",
+  "Smart Contract": "#FF6B35",
   Hackathon: "#ffcc00",
+  "AI Agent": "#00aaff",
+  "AI App": "#aa88ff",
 };
 
 const categoryCounts: Record<string, number> = {};
@@ -44,8 +47,16 @@ export default function BuiltPage() {
         key={activeFilter}
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 animate-[fadeIn_100ms_ease-in]"
       >
-        {filtered.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+        {filtered.map((project, index) => (
+          <motion.div
+            key={project.id}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+          >
+            <ProjectCard project={project} />
+          </motion.div>
         ))}
       </div>
 

@@ -17,9 +17,102 @@ export interface Project {
   highlights: string[];
   imageUrl?: string | null;
   featured?: boolean;
+  icon?: string;
+  liveUrl?: string | null;
+  githubUrl?: string | null;
+  status?: "live" | "open-source" | "hackathon";
 }
 
 export const projects: Project[] = [
+  // ── Featured AI projects (top 3) ──
+  {
+    id: "santiagos-world-2025",
+    title: "Santiago's World",
+    company: "Independent",
+    companyUrl: "https://santiagos-world.vercel.app",
+    role: "Builder",
+    period: { start: "2025", end: "2025" },
+    location: "Remote",
+    category: "AI App",
+    tags: ["Next.js", "TypeScript", "Google Maps API", "Claude API", "PWA", "IndexedDB", "Vercel"],
+    description:
+      "A personal interactive life map and AI city guide built as a PWA. Pins every city visited on a Google Maps globe, stores them locally on the device via IndexedDB, and includes a Claude-powered AI assistant that gives personalized city guides based on travel history.",
+    metrics: [],
+    links: [
+      { label: "Live App", url: "https://santiagos-world.vercel.app" },
+      { label: "GitHub Repository", url: "https://github.com/SantiagoDevRel/santiagos-world" },
+    ],
+    highlights: [
+      "PWA installable on mobile like a native app",
+      "Offline-first with IndexedDB for local data storage",
+      "Claude-powered AI city guide with personalized recommendations",
+      "Interactive Google Maps globe with all visited cities",
+    ],
+    featured: true,
+    icon: "Globe",
+    liveUrl: "https://santiagos-world.vercel.app",
+    githubUrl: "https://github.com/SantiagoDevRel/santiagos-world",
+    status: "live",
+  },
+  {
+    id: "stellar-token-studio-2025",
+    title: "Stellar Token Studio",
+    company: "Independent",
+    companyUrl: "https://stellar-studio-pi.vercel.app",
+    role: "Builder",
+    period: { start: "2025", end: "2025" },
+    location: "Remote",
+    category: "AI App",
+    tags: ["Vanilla JS", "Stellar SDK", "Claude API", "Vercel", "Serverless", "Blockchain", "AI"],
+    description:
+      "A no-code token creation wizard for the Stellar blockchain. Uses the Claude API as a conversational AI wizard that guides users step by step through creating, configuring, and deploying a Stellar token, no blockchain knowledge required.",
+    metrics: [],
+    links: [
+      { label: "Live App", url: "https://stellar-studio-pi.vercel.app" },
+      { label: "GitHub Repository", url: "https://github.com/SantiagoDevRel/stellar-studio" },
+    ],
+    highlights: [
+      "Conversational AI wizard powered by Claude API for guided token creation",
+      "No blockchain knowledge required to create and deploy Stellar tokens",
+      "Vercel serverless functions to keep API keys secure server-side",
+      "Built with Vanilla JS and Stellar SDK v11",
+    ],
+    featured: true,
+    icon: "Star",
+    liveUrl: "https://stellar-studio-pi.vercel.app",
+    githubUrl: "https://github.com/SantiagoDevRel/stellar-studio",
+    status: "live",
+  },
+  {
+    id: "lifi-dca-agent-2025",
+    title: "LI.FI DCA Agent",
+    company: "Independent",
+    companyUrl: "https://github.com/SantiagoDevRel/lifi-dca-agent",
+    role: "Builder",
+    period: { start: "2025", end: "2025" },
+    location: "Remote",
+    category: "AI Agent",
+    tags: ["AI Agent", "TypeScript", "Next.js", "LI.FI", "Cross-chain", "DeFi", "Claude API"],
+    description:
+      "An AI-powered DCA (Dollar-Cost Averaging) agent built on top of the LI.FI protocol for cross-chain token swaps and bridging. The agent accepts natural language commands to schedule recurring cross-chain swaps, removing the need to manually interact with DeFi interfaces.",
+    metrics: [],
+    links: [
+      { label: "Live App", url: "https://lifi-dca-agent.up.railway.app" },
+      { label: "GitHub Repository", url: "https://github.com/SantiagoDevRel/lifi-dca-agent" },
+    ],
+    highlights: [
+      "Natural language commands to schedule recurring cross-chain DCA swaps",
+      "Built on LI.FI protocol for cross-chain token swaps and bridging",
+      "Powered by Claude API for conversational DeFi interactions",
+    ],
+    featured: true,
+    icon: "Bot",
+    liveUrl: "https://lifi-dca-agent.up.railway.app",
+    githubUrl: "https://github.com/SantiagoDevRel/lifi-dca-agent",
+    status: "live",
+  },
+
+  // ── Existing projects ──
   {
     id: "libertum-launchpad",
     title: "Libertum Token Launchpad",
@@ -51,6 +144,10 @@ export const projects: Project[] = [
       "Deployed and verified on BSC Testnet — 73 commits showing full dev history",
       "Libertum grew into a full RWA platform with 30K+ community members by 2026",
     ],
+    icon: "Building2",
+    liveUrl: null,
+    githubUrl: "https://github.com/SantiagoDevRel/Libertum/commits/main/",
+    status: "open-source",
   },
   {
     id: "blextick-ethforall-2023",
@@ -80,6 +177,10 @@ export const projects: Project[] = [
       { label: "OpenSea Testnet Collection", url: "https://testnets.opensea.io/es/collection/blextick" },
     ],
     imageUrl: "/images/events/blextick.jpeg",
+    icon: "Ticket",
+    liveUrl: null,
+    githubUrl: "https://github.com/SantiagoDevRel/DevFolio-ETH-For-All",
+    status: "hackathon",
   },
   {
     id: "hyperdao-ethglobal-paris-2023",
@@ -108,6 +209,10 @@ export const projects: Project[] = [
       { label: "ETHGlobal Showcase", url: "https://ethglobal.com/showcase/hyperdao-kw6mv" },
     ],
     imageUrl: "/images/events/eth_global_hyperdao.png",
+    icon: "GitBranch",
+    liveUrl: null,
+    githubUrl: null,
+    status: "hackathon",
   },
   {
     id: "web3js-payments-ethtallinn",
@@ -135,5 +240,9 @@ export const projects: Project[] = [
       { label: "Hackathon Project", url: "https://devfolio.co/projects/webjs-payments-7d6c" },
       { label: "YouTube", url: "https://www.youtube.com/watch?v=hNASAlw8Hn4" },
     ],
+    icon: "Zap",
+    liveUrl: null,
+    githubUrl: null,
+    status: "hackathon",
   },
 ];

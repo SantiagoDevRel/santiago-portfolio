@@ -8,7 +8,7 @@ import { MapEvent, EventCategory } from "@/data/events";
 import EventModal from "./EventModal";
 
 const categoryColors: Record<EventCategory, string> = {
-  Workshop: "#FFD700",
+  Workshop: "#FF6B35",
   Conference: "#00aaff",
   Residency: "#ff6600",
   "Field Trip": "#ff00aa",
@@ -26,7 +26,10 @@ export default function EventCard({ event }: EventCardProps) {
 
   return (
     <>
-      <div className="rounded-xl border border-white/10 bg-white/[0.02] overflow-hidden hover:border-[#FFD700]/15 transition-all duration-300 group flex flex-col h-full">
+      <div
+        onMouseEnter={() => window.dispatchEvent(new Event("spotlight:hide"))}
+        onMouseLeave={() => window.dispatchEvent(new Event("spotlight:show"))}
+        className="rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-md overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/10 hover:border-orange-500/20 group flex flex-col h-full">
         {/* Cover: image or category placeholder */}
         {event.imageUrl ? (
           <div className="relative w-full h-[160px] shrink-0 overflow-hidden">
@@ -130,7 +133,7 @@ export default function EventCard({ event }: EventCardProps) {
                   href={url ?? undefined}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-foreground/35 hover:text-[#FFD700] transition-colors duration-200"
+                  className="text-xs text-foreground/35 hover:text-[#FF6B35] transition-colors duration-200"
                 >
                   {label}
                 </a>
@@ -139,7 +142,7 @@ export default function EventCard({ event }: EventCardProps) {
             {hasDetails && (
               <button
                 onClick={() => setShowModal(true)}
-                className="text-xs text-[#FFD700]/70 hover:text-[#FFD700] transition-colors duration-200 ml-auto"
+                className="text-xs text-[#FF6B35]/70 hover:text-[#FF6B35] transition-colors duration-200 ml-auto"
               >
                 See more →
               </button>

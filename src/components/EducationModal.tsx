@@ -49,7 +49,7 @@ export default function EducationModal({ entry, onClose }: EducationModalProps) 
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 text-white/70 hover:text-[#FFD700] hover:bg-white/20 transition-colors"
+          className="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 text-white/70 hover:text-[#FF6B35] hover:bg-white/20 transition-colors"
         >
           ×
         </button>
@@ -109,7 +109,7 @@ export default function EducationModal({ entry, onClose }: EducationModalProps) 
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-foreground/35 hover:text-[#FFD700] transition-colors"
+                  className="text-xs text-foreground/35 hover:text-[#FF6B35] transition-colors"
                 >
                   {link.label}
                 </a>

@@ -4,10 +4,18 @@
 
 import Image from "next/image";
 import { useState, useCallback } from "react";
+import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 import { CareerEntry } from "@/data/career";
 import { FlagImage } from "@/components/FlagImage";
+
+const sectionAnim = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true } as const,
+  transition: { duration: 0.5, ease: "easeOut" as const },
+};
 
 const companyFlags: Record<string, string> = {
   "Crimson Education": "us",
@@ -71,64 +79,82 @@ export default function CompanyPageLayout({
         href={entry.companyUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-xs text-foreground/35 hover:text-[#FFD700] transition-colors duration-200 mb-12 inline-block"
+        className="text-xs text-foreground/35 hover:text-[#FF6B35] transition-colors duration-200 mb-12 inline-block"
       >
         Visit website →
       </a>
 
       {/* 2. Metrics carousel */}
-      {entry.metrics.length > 0 && <MetricsCarousel metrics={entry.metrics} />}
+      {entry.metrics.length > 0 && (
+        <motion.div {...sectionAnim}>
+          <MetricsCarousel metrics={entry.metrics} />
+        </motion.div>
+      )}
 
       {/* 3. Bullets */}
       {entry.bullets && entry.bullets.length > 0 && (
-        <section className="mb-12">
-          <h2 className="text-[11px] font-semibold uppercase tracking-widest text-[#FFD700]/70 mb-5">
+        <motion.section className="mb-12" {...sectionAnim}>
+          <h2 className="text-[11px] font-semibold uppercase tracking-widest text-[#FF6B35]/70 mb-5">
             Responsibilities & Impact
           </h2>
           <ul className="space-y-3">
             {entry.bullets.map((b, i) => (
               <li
                 key={i}
-                className="text-sm text-foreground/55 leading-relaxed pl-4 border-l-2 border-[#FFD700]/40"
+                className="text-sm text-foreground/55 leading-relaxed pl-4 border-l-2 border-[#FF6B35]/40"
               >
                 {b}
               </li>
             ))}
           </ul>
-        </section>
+        </motion.section>
       )}
 
       {/* 4. Partners */}
       {entry.partners && entry.partners.length > 0 && (
-        <section className="mb-12">
-          <h2 className="text-[11px] font-semibold uppercase tracking-widest text-[#FFD700]/70 mb-4">
+        <motion.section className="mb-12" {...sectionAnim}>
+          <h2 className="text-[11px] font-semibold uppercase tracking-widest text-[#FF6B35]/70 mb-4">
             Ecosystem Partners
           </h2>
           <div className="flex flex-wrap gap-2">
-            {entry.partners.map((p) => (
-              <span
+            {entry.partners.map((p, i) => (
+              <motion.span
                 key={p}
-                className="text-xs px-3 py-1.5 rounded-full bg-[#1a1a1a] border border-[#FFD700]/30 text-[#FFD700]"
+                className="text-xs px-3 py-1.5 rounded-full bg-white/[0.03] backdrop-blur-md border border-white/[0.08] text-[#FF6B35]"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: i * 0.05 }}
               >
                 {p}
-              </span>
+              </motion.span>
             ))}
           </div>
-        </section>
+        </motion.section>
       )}
 
       {/* 5. Children (events, education, projects horizontal scrolls) */}
-      {children}
+      <motion.div {...sectionAnim}>
+        {children}
+      </motion.div>
 
       {/* 6. Photos (always last) */}
       {entry.photos && entry.photos.length > 0 && (
-        <section className="mb-12">
+        <motion.section className="mb-12" {...sectionAnim}>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {entry.photos.slice(0, 3).map((photo) => (
-              <PhotoCard key={photo.filename} photo={photo} />
+            {entry.photos.slice(0, 3).map((photo, i) => (
+              <motion.div
+                key={photo.filename}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                <PhotoCard photo={photo} />
+              </motion.div>
             ))}
           </div>
-        </section>
+        </motion.section>
       )}
     </div>
   );
@@ -165,7 +191,7 @@ function MetricsCarousel({
           height="14"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#FFD700"
+          stroke="#FF6B35"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -175,14 +201,16 @@ function MetricsCarousel({
       </button>
 
       {/* Carousel */}
-      <div ref={emblaRef} className="overflow-hidden">
+      <div ref={emblaRef} className="overflow-hidden cursor-grab active:cursor-grabbing">
         <div className="flex gap-3">
           {metrics.map((m) => (
             <div
               key={m.label}
-              className="shrink-0 rounded-xl bg-[#111] border border-[#FFD700]/20 px-5 py-4 min-w-[160px]"
+              onMouseEnter={() => window.dispatchEvent(new Event("spotlight:hide"))}
+              onMouseLeave={() => window.dispatchEvent(new Event("spotlight:show"))}
+              className="shrink-0 rounded-2xl bg-white/[0.03] backdrop-blur-md border border-white/[0.08] px-5 py-4 min-w-[160px] transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/10 hover:border-orange-500/20"
             >
-              <div className="text-xl font-bold bg-gradient-to-r from-[#FFD700] via-[#FF6B35] to-[#C8400A] bg-clip-text text-transparent">{m.value}</div>
+              <div className="text-xl font-bold bg-gradient-to-r from-[#FF6B35] to-[#C8400A] bg-clip-text text-transparent">{m.value}</div>
               <div className="text-xs text-foreground/40 mt-1">{m.label}</div>
             </div>
           ))}
@@ -199,7 +227,7 @@ function MetricsCarousel({
           height="14"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#FFD700"
+          stroke="#FF6B35"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -221,7 +249,7 @@ function PhotoCard({
 
   if (error) {
     return (
-      <div className="rounded-xl bg-[#111] border border-white/[0.06] flex flex-col items-center justify-center h-[200px]">
+      <div className="rounded-2xl bg-white/[0.03] backdrop-blur-md border border-white/[0.08] flex flex-col items-center justify-center h-[200px]">
         <svg
           className="w-8 h-8 text-[#444]"
           fill="none"
@@ -246,7 +274,10 @@ function PhotoCard({
   }
 
   return (
-    <div className="rounded-xl overflow-hidden border border-white/[0.06]">
+    <div
+      onMouseEnter={() => window.dispatchEvent(new Event("spotlight:hide"))}
+      onMouseLeave={() => window.dispatchEvent(new Event("spotlight:show"))}
+      className="rounded-2xl overflow-hidden bg-white/[0.03] backdrop-blur-md border border-white/[0.08] transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/10 hover:border-orange-500/20">
       <div className="relative h-[200px]">
         <Image
           src={src}

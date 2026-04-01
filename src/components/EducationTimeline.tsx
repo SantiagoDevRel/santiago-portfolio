@@ -86,7 +86,7 @@ export default function EducationTimeline() {
           <div key={group.label} className="mb-12">
             {/* Year section label */}
             <div className="flex items-center gap-4 mb-6">
-              <span className="text-sm font-bold text-[#FFD700] tracking-wide uppercase">
+              <span className="text-sm font-bold text-[#FF6B35] tracking-wide uppercase">
                 {group.label}
               </span>
               <div className="flex-1 h-px bg-white/10" />
@@ -133,7 +133,10 @@ function TimelineEntry({ entry }: { entry: EducationEntry }) {
       </div>
 
       {/* Right column: card */}
-      <div className="border border-white/10 rounded-xl p-6 flex-1 hover:border-[#FFD700]/30 transition-colors">
+      <div
+        onMouseEnter={() => window.dispatchEvent(new Event("spotlight:hide"))}
+        onMouseLeave={() => window.dispatchEvent(new Event("spotlight:show"))}
+        className="border border-white/[0.08] bg-white/[0.03] backdrop-blur-md rounded-2xl p-6 flex-1 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/10 hover:border-orange-500/20">
         <div className="flex items-start justify-between flex-wrap gap-2">
           <div>
             <h3 className="text-lg font-bold">{entry.title}</h3>
@@ -165,7 +168,7 @@ function TimelineEntry({ entry }: { entry: EducationEntry }) {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs px-3 py-1 rounded-full border border-white/10 text-foreground/50 hover:text-[#FFD700] hover:border-[#FFD700]/30 transition-colors"
+                className="text-xs px-3 py-1 rounded-full border border-white/10 text-foreground/50 hover:text-[#FF6B35] hover:border-[#FF6B35]/30 transition-colors"
               >
                 {link.label}
               </a>

@@ -2,12 +2,13 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import EventCard from "@/components/EventCard";
 import FilterBar from "@/components/FilterBar";
 import { events } from "@/data/events";
 
 const categoryColors: Record<string, string> = {
-  Workshop: "#FFD700",
+  Workshop: "#FF6B35",
   Conference: "#00aaff",
   Hackathon: "#ffcc00",
   Residency: "#ff6600",
@@ -58,7 +59,7 @@ export default function EventsPage() {
           onClick={() => setActiveYear(null)}
           className={`text-xs px-3 py-1.5 rounded-full border transition-all duration-200 ${
             activeYear === null
-              ? "border-[#FFD700]/40 text-[#FFD700]"
+              ? "border-[#FF6B35]/40 text-[#FF6B35]"
               : "border-white/[0.06] text-foreground/25"
           }`}
         >
@@ -70,7 +71,7 @@ export default function EventsPage() {
             onClick={() => setActiveYear(activeYear === year ? null : year)}
             className={`text-xs px-3 py-1.5 rounded-full border transition-all duration-200 ${
               activeYear === year
-                ? "border-[#FFD700]/40 text-[#FFD700]"
+                ? "border-[#FF6B35]/40 text-[#FF6B35]"
                 : "border-white/[0.06] text-foreground/25"
             }`}
           >
@@ -86,8 +87,16 @@ export default function EventsPage() {
         {[...filtered].sort((a, b) => {
           if (b.year !== a.year) return b.year - a.year;
           return 0;
-        }).map((event) => (
-          <EventCard key={event.id} event={event} />
+        }).map((event, index) => (
+          <motion.div
+            key={event.id}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+          >
+            <EventCard event={event} />
+          </motion.div>
         ))}
       </div>
 

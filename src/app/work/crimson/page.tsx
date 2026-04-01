@@ -9,7 +9,10 @@ export default function CrimsonPage() {
     <CompanyPageLayout entry={entry}>
       {/* Guinness World Record special card */}
       <section className="mb-12 border-t border-white/[0.06] pt-12">
-        <div className="rounded-xl border border-white/10 bg-white/[0.02] p-6">
+        <div
+          onMouseEnter={() => window.dispatchEvent(new Event("spotlight:hide"))}
+          onMouseLeave={() => window.dispatchEvent(new Event("spotlight:show"))}
+          className="rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-md p-6">
           <h3 className="text-lg font-bold">Guinness World Record</h3>
           <p className="text-sm text-foreground/55 mt-2">
             65,959 sandwiches in one hour. Co-produced with student Joseph Yoffee (now at Brown University). 1,000+ volunteers, donated to low-income communities in South Africa. September 23, 2022.
@@ -18,7 +21,7 @@ export default function CrimsonPage() {
             href="https://www.guinnessworldrecords.com/world-records/most-sandwiches-made-in-one-hour"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block mt-4 text-xs text-[#FFD700]/70 hover:text-[#FFD700] transition-colors"
+            className="inline-block mt-4 text-xs text-[#FF6B35]/70 hover:text-[#FF6B35] transition-colors"
           >
             Verified Guinness World Record →
           </a>
