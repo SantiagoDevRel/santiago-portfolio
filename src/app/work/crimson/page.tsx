@@ -1,4 +1,6 @@
 // Work page — Crimson Education
+"use client";
+
 import CompanyPageLayout from "@/components/CompanyPageLayout";
 import { career } from "@/data/career";
 
