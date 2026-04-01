@@ -12,20 +12,19 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
+          className="relative w-[126px] h-[126px] md:w-[166px] md:h-[166px]"
         >
-          <div
-            className="w-[126px] h-[126px] md:w-[166px] md:h-[166px] rounded-full p-[3px]"
-            style={{ background: "linear-gradient(135deg, #FF6B35, #C8400A)" }}
-          >
-            <Image
-              src="/images/profile/linkedin_photo.jpg"
-              alt="Santiago Trujillo"
-              width={160}
-              height={160}
-              className="w-full h-full rounded-full object-cover border-2 border-background"
-              priority
-            />
-          </div>
+          <span className="absolute inset-0 rounded-full animate-[pulse-subtle_2s_ease-in-out_infinite]" style={{ background: "rgba(255, 107, 53, 0.2)", filter: "blur(40px)" }} />
+          <span className="absolute -inset-2 rounded-full animate-[spin-slow_3s_linear_infinite]" style={{ border: "2px solid transparent", borderTopColor: "rgba(255, 107, 53, 0.6)", borderRightColor: "rgba(255, 107, 53, 0.3)" }} />
+          <Image
+            src="/images/profile/linkedin_photo.jpg"
+            alt="Santiago Trujillo"
+            width={160}
+            height={160}
+            className="relative w-full h-full rounded-full object-cover"
+            style={{ border: "4px solid rgba(255, 107, 53, 0.4)", boxShadow: "0 0 30px rgba(255, 107, 53, 0.25)" }}
+            priority
+          />
         </motion.div>
 
         <div>

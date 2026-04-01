@@ -40,7 +40,7 @@ export default function Home() {
     .map((id) => events.find((e) => e.id === id))
     .filter(Boolean) as typeof events;
 
-  const recentProjects = [...projects].reverse().slice(0, 6);
+  const recentProjects = projects.slice(0, 6);
 
   return (
     <>

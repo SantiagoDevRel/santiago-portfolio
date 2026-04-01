@@ -31,5 +31,15 @@ html {
   100% { transform: scale(1); }
 }
 
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 /* Mapbox GL CSS import */
 @import "mapbox-gl/dist/mapbox-gl.css";

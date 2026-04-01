@@ -73,7 +73,7 @@ export const events: MapEvent[] = [
       github: null,
     },
     imageUrl: "/images/events/medellin_astar_hackathon_2023.jpg",
-    imagePosition: "top",
+    imagePosition: "center 30%",
     mapDescription: "Hackathon winner. NFT credentials on Astar network.",
     mapPin: true,
   },
@@ -110,7 +110,7 @@ export const events: MapEvent[] = [
       github: null,
     },
     imageUrl: "/images/events/european_blockchain_convention_2023.jpg",
-    imagePosition: "top",
+    imagePosition: "center 30%",
     mapPin: true,
   },
   {
@@ -277,7 +277,7 @@ export const events: MapEvent[] = [
       github: null,
     },
     imageUrl: "/images/events/eth_bucharest.jpg",
-    imagePosition: "center 20%",
+    imagePosition: "center 15%",
     mapPin: true,
   },
   {
@@ -457,6 +457,7 @@ export const events: MapEvent[] = [
       github: null,
     },
     imageUrl: "/images/events/web3_africa1.jpg",
+    imagePosition: "center 60%",
     mapPin: true,
   },
   {
@@ -1062,6 +1063,7 @@ export const events: MapEvent[] = [
       youtube: null, github: null, linkedin: null,
     },
     imageUrl: "/images/events/efdevcon_baires1.jpg",
+    imagePosition: "center 60%",
     imageGallery: [
       "/images/events/efdevcon_baires1.jpg",
       "/images/events/efdevcon_baires2.jpg",
