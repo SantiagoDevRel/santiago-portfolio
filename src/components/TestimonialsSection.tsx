@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState, useEffect } from "react";
+import { useCallback, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
@@ -8,6 +8,7 @@ import { ExternalLink, X } from "lucide-react";
 import Image from "next/image";
 import { testimonials, Testimonial } from "@/data/testimonials";
 import { ModalPortal } from "@/components/ui/ModalPortal";
+import { useModalLock } from "@/hooks/useModalLock";
 
 function Avatar({ t, size = 40 }: { t: Testimonial; size?: number }) {
   const [imgError, setImgError] = useState(false);
@@ -104,27 +105,22 @@ function TestimonialModal({
   t: Testimonial;
   onClose: () => void;
 }) {
-  useEffect(() => {
-    function handleEsc(e: KeyboardEvent) {
-      if (e.key === "Escape") onClose();
-    }
-    window.addEventListener("keydown", handleEsc);
-    return () => window.removeEventListener("keydown", handleEsc);
-  }, [onClose]);
+  useModalLock(onClose);
 
   return (
     <ModalPortal>
     <motion.div
-      className="fixed inset-0 z-[9999] flex items-end sm:items-center justify-center sm:p-4"
+      className="fixed top-0 left-0 right-0 bottom-0 z-[9999] flex items-end sm:items-center justify-center sm:p-4"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
       onClick={onClose}
     >
-      <div className="absolute inset-0 bg-black/85 backdrop-blur-sm" />
+      <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/85 backdrop-blur-sm" />
       <motion.div
-        className="relative max-w-[560px] w-full rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-md p-8 max-h-[85vh] overflow-y-auto"
+        className="relative max-w-[560px] w-full rounded-t-2xl sm:rounded-2xl border border-white/[0.08] bg-[#141414] p-8 max-h-[95vh] sm:max-h-[90vh] overflow-y-auto"
+        style={{ WebkitOverflowScrolling: "touch" }}
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.95 }}

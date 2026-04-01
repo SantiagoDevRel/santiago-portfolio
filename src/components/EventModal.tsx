@@ -1,12 +1,13 @@
 // EventModal — full event detail modal with optional image gallery
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { X } from "lucide-react";
 import { MapEvent, EventCategory } from "@/data/events";
 import { ModalPortal } from "@/components/ui/ModalPortal";
+import { useModalLock } from "@/hooks/useModalLock";
 import SurveyChart from "./SurveyChart";
 
 const categoryColors: Record<EventCategory, string> = {
@@ -28,32 +29,23 @@ export default function EventModal({ event, onClose }: EventModalProps) {
   const [galleryIndex, setGalleryIndex] = useState(0);
   const mainImage = gallery && gallery.length > 0 ? gallery[galleryIndex] : (event.imageUrl ?? null);
 
-  useEffect(() => {
-    const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    document.addEventListener("keydown", handleKey);
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.removeEventListener("keydown", handleKey);
-      document.body.style.overflow = "";
-    };
-  }, [onClose]);
+  useModalLock(onClose);
 
   return (
     <ModalPortal>
     <motion.div
-      className="fixed inset-0 z-[9999] flex items-end sm:items-center justify-center sm:p-4"
+      className="fixed top-0 left-0 right-0 bottom-0 z-[9999] flex items-end sm:items-center justify-center sm:p-4"
       onClick={onClose}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
     >
-      <div className="absolute inset-0 bg-black/85 backdrop-blur-sm" />
+      <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/85 backdrop-blur-sm" />
 
       <motion.div
         className="relative w-full sm:max-w-[680px] max-h-[95vh] sm:max-h-[90vh] overflow-y-auto rounded-t-2xl sm:rounded-2xl border border-white/[0.08] bg-[#141414]"
+        style={{ WebkitOverflowScrolling: "touch" }}
         onClick={(e) => e.stopPropagation()}
         onWheel={(e) => e.stopPropagation()}
         initial={{ opacity: 0, y: 100, scale: 1 }}
