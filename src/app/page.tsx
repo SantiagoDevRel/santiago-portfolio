@@ -19,7 +19,7 @@ export default function Home() {
       <Hero />
 
       {/* Stats bar */}
-      <section className="py-8 px-6 max-w-4xl mx-auto">
+      <section className="py-12 px-6 max-w-4xl mx-auto">
         <div className="flex justify-center gap-8 md:gap-16 flex-wrap">
           <div className="text-center">
             <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#FFD700] via-[#FF6B35] to-[#00C853] bg-clip-text text-transparent">20+</div>
@@ -40,7 +40,7 @@ export default function Home() {
       <CareerTimeline />
 
       {/* Content preview */}
-      <section className="py-20 px-6 max-w-6xl mx-auto border-t border-white/[0.06]">
+      <section className="py-16 px-6 max-w-6xl mx-auto border-t border-white/[0.06]">
         <div className="flex items-end justify-between mb-10">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
@@ -67,7 +67,7 @@ export default function Home() {
       </section>
 
       {/* Events preview */}
-      <section className="py-20 px-6 max-w-6xl mx-auto border-t border-white/[0.06]">
+      <section className="py-16 px-6 max-w-6xl mx-auto border-t border-white/[0.06]">
         <div className="flex items-end justify-between mb-10">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
@@ -94,7 +94,7 @@ export default function Home() {
       </section>
 
       {/* Built preview */}
-      <section className="py-20 px-6 max-w-6xl mx-auto border-t border-white/[0.06]">
+      <section className="py-16 px-6 max-w-6xl mx-auto border-t border-white/[0.06]">
         <div className="flex items-end justify-between mb-10">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight">

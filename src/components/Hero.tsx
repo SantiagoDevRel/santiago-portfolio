@@ -30,7 +30,7 @@ export default function Hero() {
 
         <div>
           <motion.h1
-            className="text-5xl md:text-7xl font-extrabold tracking-tighter bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text"
+            className="text-5xl md:text-7xl font-extrabold tracking-tighter bg-gradient-to-r from-[#FFD700] via-[#FF6B35] to-[#00C853] bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -48,6 +48,18 @@ export default function Hero() {
           </motion.p>
         </div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        className="mt-8"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, y: [0, 6, 0] }}
+        transition={{ opacity: { delay: 0.8 }, y: { duration: 1.5, repeat: Infinity, ease: "easeInOut" } }}
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-foreground/20">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </motion.div>
     </section>
   );
 }

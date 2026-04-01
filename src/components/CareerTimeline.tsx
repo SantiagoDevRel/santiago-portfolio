@@ -72,10 +72,10 @@ export default function CareerTimeline() {
                 className="flex flex-col items-center gap-3 group relative z-10"
               >
                 <div
-                  className={`w-11 h-11 rounded-full bg-[#1a1a1a] transition-all duration-200 ${
+                  className={`w-11 h-11 rounded-full bg-[#1a1a1a] transition-all duration-200 cursor-pointer ${
                     isActive
-                      ? "border-2 border-[#FFD700] shadow-[0_0_12px_rgba(255,215,0,0.3)]"
-                      : "border border-white/[0.08] group-hover:border-white/20"
+                      ? "border-2 border-[#FFD700] shadow-[0_0_12px_rgba(255,215,0,0.3)] scale-110"
+                      : "border border-white/[0.08] group-hover:border-white/20 group-hover:scale-105 group-hover:shadow-[0_0_8px_rgba(255,255,255,0.05)]"
                   }`}
                 />
                 <span

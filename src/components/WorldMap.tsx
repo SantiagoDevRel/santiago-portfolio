@@ -71,7 +71,7 @@ export default function WorldMap() {
 
   return (
     <>
-      <section id="map" className="pt-4 pb-12 px-6">
+      <section id="map" className="py-16 px-6">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 tracking-tight">
           Where I have been (for work!)
         </h2>

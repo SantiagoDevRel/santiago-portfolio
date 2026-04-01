@@ -1,6 +1,4 @@
 // Footer — site-wide footer with copyright, social links, and contact
-import Link from "next/link";
-
 export default function Footer() {
   return (
     <footer className="border-t border-white/[0.06] bg-[#0a0a0a]">
