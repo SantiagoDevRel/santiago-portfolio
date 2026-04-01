@@ -4,6 +4,7 @@
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { ExternalLink } from "lucide-react";
 import { MapEvent, EventCategory } from "@/data/events";
 
 import EventModal from "./EventModal";
@@ -134,9 +135,10 @@ export default function EventCard({ event }: EventCardProps) {
                   href={url ?? undefined}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-foreground/35 hover:text-[#FF6B35] transition-colors duration-200"
+                  className="inline-flex items-center gap-1 text-[13px] font-medium text-[#FF6B35]/85 hover:text-[#FF6B35] hover:underline transition-opacity duration-150"
                 >
                   {label}
+                  <ExternalLink size={12} />
                 </a>
               );
             })}

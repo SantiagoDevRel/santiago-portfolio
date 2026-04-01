@@ -5,6 +5,7 @@
 import Image from "next/image";
 import { useState, useCallback } from "react";
 import { motion } from "framer-motion";
+import { ExternalLink } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 import { CareerEntry } from "@/data/career";
@@ -79,9 +80,10 @@ export default function CompanyPageLayout({
         href={entry.companyUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-xs text-foreground/35 hover:text-[#FF6B35] transition-colors duration-200 mb-12 inline-block"
+        className="inline-flex items-center gap-1 text-[13px] font-medium text-[#FF6B35]/85 hover:text-[#FF6B35] hover:underline transition-opacity duration-150 mb-12"
       >
-        Visit website →
+        Visit website
+        <ExternalLink size={12} />
       </a>
 
       {/* 2. Metrics carousel */}

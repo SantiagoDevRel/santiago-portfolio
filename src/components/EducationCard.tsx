@@ -5,6 +5,7 @@
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { ExternalLink } from "lucide-react";
 import { EducationEntry, EducationCategory } from "@/data/education";
 import SurveyChart from "./SurveyChart";
 import EducationModal from "./EducationModal";
@@ -102,9 +103,10 @@ export default function EducationCard({ entry }: EducationCardProps) {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs text-foreground/35 hover:text-[#FF6B35] transition-colors duration-200"
+              className="inline-flex items-center gap-1 text-[13px] font-medium text-[#FF6B35]/85 hover:text-[#FF6B35] hover:underline transition-opacity duration-150"
             >
               {link.label}
+              <ExternalLink size={12} />
             </a>
           ))}
           <button

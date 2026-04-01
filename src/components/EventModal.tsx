@@ -4,7 +4,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { X } from "lucide-react";
+import { X, ExternalLink } from "lucide-react";
 import { MapEvent, EventCategory } from "@/data/events";
 import { ModalPortal } from "@/components/ui/ModalPortal";
 import { useModalLock } from "@/hooks/useModalLock";
@@ -165,9 +165,10 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                     href={url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-foreground/35 hover:text-[#FF6B35] transition-colors"
+                    className="inline-flex items-center gap-1 text-[13px] font-medium text-[#FF6B35]/85 hover:text-[#FF6B35] hover:underline transition-opacity duration-150"
                   >
                     {label}
+                    <ExternalLink size={12} />
                   </a>
                 );
               })}

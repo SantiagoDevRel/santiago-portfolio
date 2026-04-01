@@ -1,5 +1,6 @@
 // CompanyHero — reusable hero section for company work pages
 import Image from "next/image";
+import { ExternalLink } from "lucide-react";
 import { FlagImage } from "@/components/FlagImage";
 
 interface CompanyHeroProps {
@@ -44,9 +45,10 @@ export default function CompanyHero({
         href={websiteUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-xs text-foreground/35 hover:text-[#FF6B35] transition-colors duration-200"
+        className="inline-flex items-center gap-1 text-[13px] font-medium text-[#FF6B35]/85 hover:text-[#FF6B35] hover:underline transition-opacity duration-150"
       >
-        Visit website →
+        Visit website
+        <ExternalLink size={12} />
       </a>
     </section>
   );

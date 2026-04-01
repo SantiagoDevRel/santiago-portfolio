@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { career, CareerEntry } from "@/data/career";
 import Link from "next/link";
 import Image from "next/image";
+import { ExternalLink } from "lucide-react";
 import { FlagImage } from "@/components/FlagImage";
 
 const companyLogos: Record<string, { logo: string; flagCode: string }> = {
@@ -123,9 +124,18 @@ export default function CareerTimeline() {
   );
 }
 
+const workSlugs: Record<string, string> = {
+  "crimson-education-2021": "crimson",
+  libertum: "libertum",
+  swisstronik: "swisstronik",
+  "chainsafe-web3js": "chainsafe",
+  lisk: "lisk",
+};
+
 function CareerDetailCard({ entry }: { entry: CareerEntry }) {
   const color = categoryColors[entry.category] ?? "#FF6B35";
   const logoInfo = companyLogos[entry.company] ?? null;
+  const workHref = `/work/${workSlugs[entry.id] ?? entry.id}`;
 
   return (
     <div
@@ -193,9 +203,10 @@ function CareerDetailCard({ entry }: { entry: CareerEntry }) {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs text-foreground/35 hover:text-[#FF6B35] transition-colors duration-200"
+              className="inline-flex items-center gap-1 text-[13px] font-medium text-[#FF6B35]/85 hover:text-[#FF6B35] hover:underline transition-opacity duration-150"
             >
               {link.label}
+              <ExternalLink size={12} />
             </a>
           ))}
         </div>
@@ -203,7 +214,7 @@ function CareerDetailCard({ entry }: { entry: CareerEntry }) {
 
       <div className="mt-5 pt-4 border-t border-white/[0.06]">
         <Link
-          href="/built"
+          href={workHref}
           className="text-xs font-medium text-[#FF6B35]/80 hover:text-[#FF6B35] transition-colors duration-200"
         >
           See full work →

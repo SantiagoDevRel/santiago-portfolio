@@ -3,7 +3,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { X } from "lucide-react";
+import { X, ExternalLink } from "lucide-react";
 import { EducationEntry, EducationCategory } from "@/data/education";
 import { ModalPortal } from "@/components/ui/ModalPortal";
 import { useModalLock } from "@/hooks/useModalLock";
@@ -109,9 +109,10 @@ export default function EducationModal({ entry, onClose }: EducationModalProps) 
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-foreground/35 hover:text-[#FF6B35] transition-colors"
+                  className="inline-flex items-center gap-1 text-[13px] font-medium text-[#FF6B35]/85 hover:text-[#FF6B35] hover:underline transition-opacity duration-150"
                 >
                   {link.label}
+                  <ExternalLink size={12} />
                 </a>
               ))}
             </div>

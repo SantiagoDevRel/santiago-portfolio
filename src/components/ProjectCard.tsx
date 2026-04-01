@@ -15,6 +15,7 @@ import {
   Globe,
   Star,
   X,
+  ExternalLink,
   type LucideIcon,
 } from "lucide-react";
 
@@ -102,9 +103,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs text-foreground/35 hover:text-[#FF6B35] transition-colors duration-200"
+              className="inline-flex items-center gap-1 text-[13px] font-medium text-[#FF6B35]/85 hover:text-[#FF6B35] hover:underline transition-opacity duration-150"
             >
               {link.label}
+              <ExternalLink size={12} />
             </a>
           ))}
           <button
@@ -209,9 +211,10 @@ function ProjectModal({ project, onClose, Icon }: { project: Project; onClose: (
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs text-[#FF6B35]/70 hover:text-[#FF6B35] transition-colors duration-200"
+              className="inline-flex items-center gap-1 text-[13px] font-medium text-[#FF6B35]/85 hover:text-[#FF6B35] hover:underline transition-opacity duration-150"
             >
               {link.label}
+              <ExternalLink size={12} />
             </a>
           ))}
         </div>
