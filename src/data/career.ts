@@ -197,10 +197,10 @@ export const career: CareerEntry[] = [
     year: 2024,
     company: "Lisk / Onchain Foundation",
     companyUrl: "https://lisk.com",
-    role: "Developer Advocate",
+    role: "Global Developer Advocate",
     period: { start: "Nov 2024", end: "Present" },
     description:
-      "Developer Advocate for Lisk, an Ethereum L2 focused on emerging markets. Building developer tooling, running workshops across LATAM and Africa, and growing the builder community.",
+      "Global Developer Advocate for Lisk, an Ethereum L2 focused on emerging markets. Building developer tooling, running workshops across LATAM and Africa, and growing the builder community.",
     metrics: [
       { label: "Budget managed", value: "$100K+" },
       { label: "Countries covered", value: "7" },

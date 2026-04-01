@@ -24,8 +24,8 @@ export default function Footer() {
           </a>
         </div>
 
-        <a href="mailto:santiagotrujillozuluaga@gmail.com" className="text-xs text-foreground/30 hover:text-[#FF6B35] transition-colors">
-          Get in touch
+        <a href="https://linkedin.com/in/santiagotrujillozuluaga" target="_blank" rel="noopener noreferrer" className="text-xs text-foreground/30 hover:text-[#FF6B35] transition-colors">
+          LinkedIn
         </a>
       </div>
     </footer>

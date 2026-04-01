@@ -3,6 +3,7 @@
 "use client";
 
 import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { EducationEntry, EducationCategory } from "@/data/education";
 import SurveyChart from "./SurveyChart";
@@ -116,9 +117,11 @@ export default function EducationCard({ entry }: EducationCardProps) {
       </div>
     </div>
 
-    {showModal && (
-      <EducationModal entry={entry} onClose={() => setShowModal(false)} />
-    )}
+    <AnimatePresence>
+      {showModal && (
+        <EducationModal entry={entry} onClose={() => setShowModal(false)} />
+      )}
+    </AnimatePresence>
     </>
   );
 }

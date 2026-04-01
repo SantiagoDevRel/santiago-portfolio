@@ -8,6 +8,7 @@ import ProjectCard from "@/components/ProjectCard";
 import HomeCarousel from "@/components/HomeCarousel";
 import AnimateIn from "@/components/AnimateIn";
 import StatCounter from "@/components/StatCounter";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import { education } from "@/data/education";
 import { events } from "@/data/events";
 import { projects } from "@/data/projects";
@@ -149,6 +150,8 @@ export default function Home() {
           ))}
         </HomeCarousel>
       </section>
+
+      <TestimonialsSection />
     </>
   );
 }

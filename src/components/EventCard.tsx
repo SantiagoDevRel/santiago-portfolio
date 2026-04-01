@@ -2,6 +2,7 @@
 "use client";
 
 import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { MapEvent, EventCategory } from "@/data/events";
 
@@ -151,9 +152,11 @@ export default function EventCard({ event }: EventCardProps) {
         </div>
       </div>
 
-      {showModal && (
-        <EventModal event={event} onClose={() => setShowModal(false)} />
-      )}
+      <AnimatePresence>
+        {showModal && (
+          <EventModal event={event} onClose={() => setShowModal(false)} />
+        )}
+      </AnimatePresence>
     </>
   );
 }
