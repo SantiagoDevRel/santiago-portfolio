@@ -171,18 +171,15 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            className="fixed inset-0 z-[100] md:hidden"
+            className="fixed top-0 left-0 w-screen h-screen z-[9999] md:hidden bg-[#0a0a0a] overflow-y-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
-            {/* Backdrop */}
-            <div className="absolute inset-0 bg-[rgba(10,10,10,0.97)] backdrop-blur-lg" />
-
             {/* Content */}
             <motion.div
-              className="relative z-10 flex flex-col h-full px-8 pt-6 pb-10"
+              className="flex flex-col min-h-full px-8 pt-6 pb-10"
               initial={{ x: 60, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: 60, opacity: 0 }}
