@@ -14,6 +14,7 @@ import {
   Bot,
   Globe,
   Star,
+  FileSearch,
   X,
   ExternalLink,
   type LucideIcon,
@@ -27,6 +28,7 @@ const iconMap: Record<string, LucideIcon> = {
   Bot,
   Globe,
   Star,
+  FileSearch,
 };
 
 const statusConfig: Record<string, { label: string; color: string }> = {

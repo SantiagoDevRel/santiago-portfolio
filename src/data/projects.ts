@@ -24,7 +24,7 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  // ── Featured AI projects (top 3) ──
+  // ── Featured AI projects (top 4) ──
   {
     id: "santiagos-world-2025",
     title: "Santiago's World",
@@ -81,6 +81,36 @@ export const projects: Project[] = [
     icon: "Star",
     liveUrl: "https://stellar-studio-pi.vercel.app",
     githubUrl: "https://github.com/SantiagoDevRel/stellar-studio",
+    status: "live",
+  },
+  {
+    id: "rag-citations-2025",
+    title: "RAG with Citations",
+    company: "Independent",
+    companyUrl: "https://rag-citations.vercel.app",
+    role: "Builder",
+    period: { start: "2025", end: "2025" },
+    location: "Remote",
+    category: "AI App",
+    tags: ["Next.js", "TypeScript", "Claude API", "TF-IDF", "BM25", "Voyage AI", "RAG", "Vercel"],
+    description:
+      "A Retrieval-Augmented Generation demo app that answers questions about any pasted document and shows cited sources. Supports three retrieval methods: TF-IDF, BM25, and vector search via Voyage AI embeddings, with a side-by-side score explorer to compare how each method ranks chunks.",
+    metrics: [],
+    links: [
+      { label: "Live App", url: "https://rag-citations.vercel.app" },
+      { label: "GitHub Repository", url: "https://github.com/SantiagoDevRel/rag-citations" },
+    ],
+    highlights: [
+      "Three retrieval methods: TF-IDF, BM25 keyword scoring, and Voyage AI vector embeddings",
+      "Claude-powered Q&A with strict grounding — answers only from provided document chunks",
+      "Interactive chunk explorer with keyword highlighting and per-chunk match counts",
+      "Score explorer visualizes how each retrieval method ranks every chunk",
+      "Markdown stripping for clean display of technical documents",
+    ],
+    featured: true,
+    icon: "FileSearch",
+    liveUrl: "https://rag-citations.vercel.app",
+    githubUrl: "https://github.com/SantiagoDevRel/rag-citations",
     status: "live",
   },
   {
