@@ -80,12 +80,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
         {Icon && <Icon size={20} className="text-[#FF6B35] mb-3" />}
 
-        <h3 className="text-xs font-bold tracking-widest uppercase">
-          <span className="text-[#FF6B35]/80">{project.title}</span>
-          <span className="text-foreground/40 ml-2">{getYear(project.period)}</span>
+        <h3 className="text-sm font-bold tracking-widest uppercase">
+          <span className="text-[#FF6B35]">{project.title}</span>
+          <span className="text-foreground/50 ml-2">{getYear(project.period)}</span>
         </h3>
 
-        <p className="text-[15px] text-foreground/70 mt-3 leading-relaxed line-clamp-2">
+        <p className="text-base text-foreground/80 mt-3 leading-relaxed line-clamp-3">
           {project.description}
         </p>
 
@@ -93,7 +93,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="text-[11px] px-2 py-0.5 rounded-full bg-[#FF6B35]/8 text-[#FF6B35]/60 border border-[#FF6B35]/10"
+              className="text-xs px-2.5 py-1 rounded-full bg-[#FF6B35]/10 text-[#FF6B35]/80 border border-[#FF6B35]/15"
             >
               {tag}
             </span>
@@ -107,7 +107,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-[13px] font-medium text-[#FF6B35]/85 hover:text-[#FF6B35] hover:underline transition-opacity duration-150"
+              className="inline-flex items-center gap-1 text-sm font-medium text-[#FF6B35] hover:text-[#FF6B35] hover:underline transition-opacity duration-150"
             >
               {link.label}
               <ExternalLink size={12} />
@@ -215,7 +215,7 @@ function ProjectModal({ project, onClose, Icon }: { project: Project; onClose: (
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-[13px] font-medium text-[#FF6B35]/85 hover:text-[#FF6B35] hover:underline transition-opacity duration-150"
+              className="inline-flex items-center gap-1 text-sm font-medium text-[#FF6B35] hover:text-[#FF6B35] hover:underline transition-opacity duration-150"
             >
               {link.label}
               <ExternalLink size={12} />
