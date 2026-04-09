@@ -24,7 +24,39 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  // ── Featured AI projects (top 4) ──
+  // ── Featured AI projects (top 5) ──
+  {
+    id: "prompt-lab-2025",
+    title: "Prompt Lab",
+    company: "Independent",
+    companyUrl: "https://langfuse-app.vercel.app",
+    role: "Builder",
+    period: { start: "2025", end: "2025" },
+    location: "Remote",
+    category: "AI App",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Claude API", "Supabase", "Vercel"],
+    description:
+      "A prompt testing and optimization tool for developers. Run prompts against Claude, get AI-powered evaluations with scores across 4 dimensions (instruction following, conciseness, clarity, prompt efficiency), and track improvements across iterations with actionable tips.",
+    metrics: [
+      { label: "Eval Dimensions", value: "4" },
+      { label: "API Calls/Run", value: "2" },
+    ],
+    links: [
+      { label: "Live App", url: "https://langfuse-app.vercel.app" },
+      { label: "GitHub Repository", url: "https://github.com/SantiagoDevRel/langfuse-app" },
+    ],
+    highlights: [
+      "Dual Claude API calls per run: main response + automated evaluation",
+      "4-dimension scoring with animated score bars and progression tracking",
+      "Session-based workflow to iterate and improve prompts over time",
+      "Dark 'Obsidian Laboratory' UI with Syne, DM Mono, and JetBrains Mono fonts",
+    ],
+    featured: true,
+    icon: "FlaskConical",
+    liveUrl: "https://langfuse-app.vercel.app",
+    githubUrl: "https://github.com/SantiagoDevRel/langfuse-app",
+    status: "live",
+  },
   {
     id: "santiagos-world-2025",
     title: "Santiago's World",

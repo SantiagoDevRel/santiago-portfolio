@@ -15,6 +15,7 @@ import {
   Globe,
   Star,
   FileSearch,
+  FlaskConical,
   X,
   ExternalLink,
   type LucideIcon,
@@ -29,6 +30,7 @@ const iconMap: Record<string, LucideIcon> = {
   Globe,
   Star,
   FileSearch,
+  FlaskConical,
 };
 
 const statusConfig: Record<string, { label: string; color: string }> = {
@@ -83,7 +85,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <span className="text-foreground/40 ml-2">{getYear(project.period)}</span>
         </h3>
 
-        <p className="text-sm text-foreground/55 mt-3 leading-relaxed line-clamp-2">
+        <p className="text-[15px] text-foreground/70 mt-3 leading-relaxed line-clamp-2">
           {project.description}
         </p>
 
