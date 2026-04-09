@@ -46,7 +46,7 @@ const thinkCards = [
     icon: FileText,
     title: "Ship, then improve",
     desc: "I built a DCA agent, an AI map app, and this portfolio while working full time. Iteration in public is faster than perfection in private.",
-    proof: "3 side projects deployed and live in 2025",
+    proof: "3 side projects deployed and live in 2026",
   },
 ];
 
