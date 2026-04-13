@@ -24,7 +24,36 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  // ── Featured AI projects (top 5) ──
+  // ── Featured AI projects ──
+  {
+    id: "arkiv-agent-memory-2026",
+    title: "Arkiv Agent Memory",
+    company: "Independent",
+    companyUrl: "https://arkiv-agent-memory.vercel.app/",
+    role: "Builder",
+    period: { start: "2026", end: "2026" },
+    location: "Remote",
+    category: "AI Agent",
+    tags: ["Next.js", "TypeScript", "Claude API", "Arkiv", "Agent Memory", "Vercel"],
+    description:
+      "A Claude-powered AI agent with persistent long-term memory backed by Arkiv. The agent remembers facts, preferences, and conversations across sessions, demonstrating how decentralized storage can power stateful, context-aware AI assistants.",
+    metrics: [],
+    links: [
+      { label: "Live App", url: "https://arkiv-agent-memory.vercel.app/" },
+      { label: "GitHub Repository", url: "https://github.com/SantiagoDevRel/Arkiv-agent-memory" },
+    ],
+    highlights: [
+      "Persistent long-term memory for AI agents powered by Arkiv storage",
+      "Claude-powered conversational agent that recalls facts across sessions",
+      "Demonstrates decentralized, verifiable memory for stateful AI assistants",
+      "Built with Next.js, TypeScript, and deployed on Vercel",
+    ],
+    featured: true,
+    icon: "Brain",
+    liveUrl: "https://arkiv-agent-memory.vercel.app/",
+    githubUrl: "https://github.com/SantiagoDevRel/Arkiv-agent-memory",
+    status: "live",
+  },
   {
     id: "prompt-lab-2026",
     title: "Prompt Lab",

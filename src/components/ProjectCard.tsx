@@ -16,6 +16,7 @@ import {
   Star,
   FileSearch,
   FlaskConical,
+  Brain,
   X,
   ExternalLink,
   type LucideIcon,
@@ -31,6 +32,7 @@ const iconMap: Record<string, LucideIcon> = {
   Star,
   FileSearch,
   FlaskConical,
+  Brain,
 };
 
 const statusConfig: Record<string, { label: string; color: string }> = {
