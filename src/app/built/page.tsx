@@ -12,6 +12,7 @@ const categoryColors: Record<string, string> = {
   Hackathon: "#ffcc00",
   "AI Agent": "#00aaff",
   "AI App": "#aa88ff",
+  "Web App": "#22c55e",
 };
 
 const categoryCounts: Record<string, number> = {};
