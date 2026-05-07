@@ -19,6 +19,7 @@ import {
   Brain,
   Trophy,
   Music,
+  Drumstick,
   X,
   ExternalLink,
   type LucideIcon,
@@ -37,6 +38,7 @@ const iconMap: Record<string, LucideIcon> = {
   Brain,
   Trophy,
   Music,
+  Drumstick,
 };
 
 const statusConfig: Record<string, { label: string; color: string }> = {

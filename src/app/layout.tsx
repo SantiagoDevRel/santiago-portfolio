@@ -14,7 +14,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Santiago Trujillo — Developer Advocate",
+  title: "SantiagoDevRel portfolio",
   description:
     "Developer Advocate working at the intersection of Web3, AI, and Emerging Markets.",
 };

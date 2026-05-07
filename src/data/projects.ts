@@ -65,7 +65,7 @@ export const projects: Project[] = [
     category: "Web App",
     tags: ["Next.js", "TypeScript", "Supabase", "WhatsApp Cloud API", "Twilio", "PWA", "Vercel"],
     description:
-      "Free football prediction pool app for the 2026 Colombia World Cup and other competitions. Private groups with friends, real-time leaderboards, phone OTP auth, and a WhatsApp bot to predict and check standings. Designed end-to-end on free tiers (Vercel Hobby, Supabase free, football-data.org free).",
+      "Free football prediction pool app for the 2026 FIFA World Cup and other competitions. Private groups with friends, real-time leaderboards, phone OTP auth, and a WhatsApp bot to predict and check standings. Designed end-to-end on free tiers (Vercel Hobby, Supabase free, football-data.org free).",
     metrics: [
       { label: "Tournaments", value: "5 active" },
       { label: "Auth", value: "Phone OTP" },
@@ -83,7 +83,7 @@ export const projects: Project[] = [
       "Installable PWA with Service Worker offline support",
     ],
     featured: true,
-    icon: "Trophy",
+    icon: "Drumstick",
     liveUrl: "https://lapollacolombiana.com",
     githubUrl: "https://github.com/SantiagoDevRel/la-polla-app",
     status: "live",
