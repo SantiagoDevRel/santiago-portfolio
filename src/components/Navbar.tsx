@@ -10,6 +10,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FlagImage } from "@/components/FlagImage";
 
 const navLinks = [
+  { href: "/leadership", label: "Leadership" },
   { href: "/on-the-ground", label: "On The Ground" },
   { href: "/content", label: "Content" },
   { href: "/built", label: "Built" },
