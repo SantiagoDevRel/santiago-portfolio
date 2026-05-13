@@ -41,6 +41,20 @@ export default function Home() {
     .map((id) => events.find((e) => e.id === id))
     .filter(Boolean) as typeof events;
 
+  // Leadership: events where Santiago led teams, programs, or large-scale initiatives
+  const leadershipIds = [
+    "ethiopia-builders-residency-2025",
+    "lisk-edge-city-patagonia-2025",
+    "web3js-africa-tour-2024",
+    "lisk-aleph-founders-track-2025",
+    "lisk-africa-pitch-day-2025",
+    "ayahq-lisk-roadshow-2025",
+    "ebc-barcelona-2023",
+  ];
+  const leadershipEvents = leadershipIds
+    .map((id) => events.find((e) => e.id === id))
+    .filter(Boolean) as typeof events;
+
   const recentProjects = projects.slice(0, 6);
 
   return (
@@ -59,6 +73,35 @@ export default function Home() {
       <AnimateIn>
         <WorldMap />
       </AnimateIn>
+
+      {/* Leadership preview — flagship programs Santiago has led */}
+      <section className="py-16 px-6 max-w-6xl mx-auto border-t border-white/[0.06]">
+        <AnimateIn>
+          <div className="flex items-end justify-between mb-10">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
+                Leadership
+              </h2>
+              <p className="text-sm text-foreground/40 mt-1">
+                Programs, residencies, and tours I&apos;ve led end to end
+              </p>
+            </div>
+            <Link
+              href="/on-the-ground"
+              className="text-sm text-foreground/40 hover:text-[#FF6B35] transition-colors duration-200"
+            >
+              See all →
+            </Link>
+          </div>
+        </AnimateIn>
+        <HomeCarousel>
+          {leadershipEvents.map((event, index) => (
+            <AnimateIn key={event.id} delay={index * 0.1} className="min-w-[300px] max-w-[300px] shrink-0">
+              <EventCard event={event} />
+            </AnimateIn>
+          ))}
+        </HomeCarousel>
+      </section>
 
       <AnimateIn>
         <CareerTimeline />
