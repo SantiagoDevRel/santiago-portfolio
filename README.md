@@ -1,3 +1,16 @@
+Personal portfolio for Santiago Trujillo Zuluaga ([santiagodevrel.dev](https://santiagodevrel.dev)).
+
+All content is data-driven from `src/data/`:
+
+- `career.ts` — career timeline entries; each entry powers a `/work/<slug>` company page (Crimson, Libertum, Swisstronik, ChainSafe, Lisk, Arkiv)
+- `projects.ts` — the Built section (`/built` + homepage carousel); categories are derived from the data, colors live in `src/app/built/page.tsx`
+- `events.ts` — events, map pins (`WorldMap`), `/on-the-ground` and `/leadership`
+- `education.ts` — the Content section
+
+Company logos and event photos live in `public/images/events/` and `public/images/companies/`. Missing company photos render a "Photo coming soon" placeholder.
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

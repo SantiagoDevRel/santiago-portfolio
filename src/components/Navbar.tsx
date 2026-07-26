@@ -23,6 +23,7 @@ const workDropdown = [
   { href: "/work/swisstronik", label: "Swisstronik", flagCode: "ch", logo: "/images/events/swisstronik_logo.jpg" },
   { href: "/work/chainsafe", label: "ChainSafe Systems", flagCode: "ca", logo: "/images/events/chainsafe_logo.jpg" },
   { href: "/work/lisk", label: "Lisk / Onchain Foundation", flagCode: "ch", logo: "/images/events/lisk_logo.jpg" },
+  { href: "/work/arkiv", label: "Arkiv (Golem Factory)", flagCode: "pl", logo: "/images/events/arkiv_logo.png" },
 ];
 
 const socialLinks = [

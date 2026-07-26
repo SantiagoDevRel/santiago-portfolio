@@ -20,6 +20,10 @@ import {
   Trophy,
   Music,
   Drumstick,
+  ShieldCheck,
+  Server,
+  Rss,
+  Network,
   X,
   ExternalLink,
   type LucideIcon,
@@ -39,6 +43,10 @@ const iconMap: Record<string, LucideIcon> = {
   Trophy,
   Music,
   Drumstick,
+  ShieldCheck,
+  Server,
+  Rss,
+  Network,
 };
 
 const statusConfig: Record<string, { label: string; color: string }> = {

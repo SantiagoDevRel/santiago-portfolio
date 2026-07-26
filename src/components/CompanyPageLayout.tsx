@@ -24,6 +24,7 @@ const companyFlags: Record<string, string> = {
   Swisstronik: "ch",
   "ChainSafe – Web3.js": "ca",
   "Lisk / Onchain Foundation": "ch",
+  "Arkiv (Golem Factory)": "pl",
 };
 
 const companyLogos: Record<string, string> = {
@@ -32,6 +33,7 @@ const companyLogos: Record<string, string> = {
   Swisstronik: "/images/events/swisstronik_logo.jpg",
   "ChainSafe – Web3.js": "/images/events/chainsafe_logo.jpg",
   "Lisk / Onchain Foundation": "/images/events/lisk_logo.jpg",
+  "Arkiv (Golem Factory)": "/images/events/arkiv_logo.png",
 };
 
 interface CompanyPageLayoutProps {

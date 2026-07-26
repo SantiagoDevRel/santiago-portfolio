@@ -198,7 +198,7 @@ export const career: CareerEntry[] = [
     company: "Lisk / Onchain Foundation",
     companyUrl: "https://lisk.com",
     role: "Global Developer Advocate",
-    period: { start: "Nov 2024", end: "Present" },
+    period: { start: "Nov 2024", end: "May 2026" },
     description:
       "Global Developer Advocate for Lisk, an Ethereum L2 focused on emerging markets. Building developer tooling, running workshops across LATAM and Africa, and growing the builder community.",
     metrics: [
@@ -208,7 +208,7 @@ export const career: CareerEntry[] = [
       { label: "Patagonia Residency founders", value: "17" },
       { label: "EFDevcon Buenos Aires", value: "508 attendees" },
     ],
-    category: "Current",
+    category: "DevRel",
     bullets: [
       "Built and led a global DevRel team: 6 advocates in Africa, 1 in LATAM, overseeing $100K+ regional budget",
       "Directed the ETHiopia Builders Residency (Addis Ababa, Jan-Feb 2025): 57 builders, 8 African countries, 28 projects in 21 days",
@@ -230,6 +230,47 @@ export const career: CareerEntry[] = [
     ],
     links: [
       { label: "Lisk.com", url: "https://lisk.com" },
+    ],
+  },
+  {
+    id: "golem-arkiv",
+    year: 2026,
+    company: "Arkiv (Golem Factory)",
+    companyUrl: "https://arkiv.network",
+    role: "Sr. Developer Relations",
+    period: { start: "Jun 2026", end: "Present" },
+    description:
+      "Senior Developer Relations for Arkiv, the Web3 database: an Ethereum-aligned DB-Chain where data lives as queryable, time-scoped entities. Building the AI-native onboarding path (MCP server, docs, telemetry), publishing the open-source tooling around the SDK, stress-testing the chain itself, and contributing the developer-facing surfaces of the official builder hub.",
+    metrics: [
+      { label: "Open-source npm libraries", value: "2" },
+      { label: "Live MCP servers", value: "2" },
+      { label: "Ecosystem projects curated", value: "124 → 104" },
+      { label: "Consensus-halting bug caught", value: "1" },
+      { label: "ETHGlobal Lisbon 2026 build", value: "SureX" },
+    ],
+    category: "Current",
+    bullets: [
+      "Caught a consensus-halting flaw in Arkiv's L3 before any external builder hit it: adversarial load testing produced a block that exceeded the consensus replication limit and froze the chain for ~12h. Reported it with a clean reproduction and verified the team's fix on a locally built devnet",
+      "Made the Web3 database adoptable from any AI client: shipped a production-hardened, security-audited MCP server (local + hosted over HTTP), a docs site, and a privacy-preserving telemetry layer designed to measure first successful query rather than sign-ups",
+      "Published arkiv-sync on npm: an open-source EVM to Arkiv event indexer (library + scaffolder + agent skill + live demo) that survives reorgs, is idempotent, resumes from a cursor, and batches its writes",
+      "Published arkiv-graph on npm: a library + live showcase that renders a running Arkiv database as an interactive graph with writes signed by the visitor's own wallet, no server key involved",
+      "Turned 124 hackathon submissions into the 104-project ecosystem showcase developers browse today, via a multi-agent audit pipeline that verified real product usage repo by repo; contributed the developer-facing surfaces of the official builder hub",
+      "Built SureX at ETHGlobal Lisbon 2026: a trust registry for MCP servers plus a Claude Code gate that halts a flagged tool call and hands the decision to a human, with reviews running on a self-hosted NVIDIA DGX",
+      "Ran the product's live event surfaces: an interactive booth app for ETHPragma Lisbon where every tap exercises a real Arkiv capability against a live testnet, and the developer landing for the company Ideathon",
+      "Shipped a remote MCP hackathon copilot for the team ahead of ETHGlobal Lisbon: a multi-model-researched knowledge base of all 8 sponsors, queryable from any LLM client",
+      "Fed engineering what only a DevRel sitting in the SDK can see: reproducible friction logs with repro commands and version numbers, delivered as an actionable document per team",
+    ],
+    partners: ["ETHGlobal", "Sourcify", "ENS", "World", "Sui", "Walrus"],
+    photos: [
+      { filename: "arkiv1.jpg", alt: "SureX team at ETHGlobal Lisbon 2026", date: "Jul 2026" },
+      { filename: "arkiv2.jpg", alt: "Arkiv booth at ETHPragma Lisbon", date: "Jul 2026" },
+      { filename: "arkiv3.jpg", alt: "Arkiv team", date: "2026" },
+    ],
+    links: [
+      { label: "Arkiv.network", url: "https://arkiv.network" },
+      { label: "Arkiv Builder Hub", url: "https://arkiv-hub.vercel.app" },
+      { label: "arkiv-sync on npm", url: "https://www.npmjs.com/package/arkiv-sync" },
+      { label: "arkiv-graph on npm", url: "https://www.npmjs.com/package/arkiv-graph" },
     ],
   },
 ];

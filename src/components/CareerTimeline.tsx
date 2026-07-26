@@ -17,6 +17,7 @@ const companyLogos: Record<string, { logo: string; flagCode: string }> = {
   "Swisstronik": { logo: "/images/events/swisstronik_logo.jpg", flagCode: "ch" },
   "ChainSafe – Web3.js": { logo: "/images/events/chainsafe_logo.jpg", flagCode: "ca" },
   "Lisk / Onchain Foundation": { logo: "/images/events/lisk_logo.jpg", flagCode: "ch" },
+  "Arkiv (Golem Factory)": { logo: "/images/events/arkiv_logo.png", flagCode: "pl" },
 };
 
 function parseYear(s: string): number {
@@ -130,6 +131,7 @@ const workSlugs: Record<string, string> = {
   swisstronik: "swisstronik",
   "chainsafe-web3js": "chainsafe",
   lisk: "lisk",
+  "golem-arkiv": "arkiv",
 };
 
 function CareerDetailCard({ entry }: { entry: CareerEntry }) {
