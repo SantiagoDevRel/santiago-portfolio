@@ -9,6 +9,14 @@ All content is data-driven from `src/data/`:
 
 Company logos and event photos live in `public/images/events/` and `public/images/companies/`. Missing company photos render a "Photo coming soon" placeholder.
 
+Event links use a shared `linkLabel()` helper in `events.ts`: unknown keys are capitalised, and `live` / `x` map to "Website" / "Post on X".
+
+## Deploy
+
+`main` is connected to the Vercel project `santiago-portfolio` (team `santiago-hobby`), so a push to `main` deploys to production at [www.santiagodevrel.dev](https://www.santiagodevrel.dev). The apex domain redirects to `www`.
+
+A manual deploy is `vercel deploy --prod --scope santiago-hobby`. `.vercelignore` is a deny-all allowlist, so only the files the build needs are uploaded and the local `.env.local` never leaves the machine. After any manual deploy, check that `/.env.local` returns 404.
+
 ---
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
