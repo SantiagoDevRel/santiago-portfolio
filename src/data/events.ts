@@ -40,6 +40,12 @@ export interface MapEvent {
   mapPin?: boolean;
 }
 
+const LINK_LABELS: Record<string, string> = { live: "Website", x: "Post on X" };
+
+export function linkLabel(key: string): string {
+  return LINK_LABELS[key] ?? key.charAt(0).toUpperCase() + key.slice(1);
+}
+
 export const events: MapEvent[] = [
   {
     id: "medellin-astar-hackathon-2023",
@@ -1139,6 +1145,80 @@ export const events: MapEvent[] = [
     },
     imageUrl: "/images/events/query_the_goat.jpg",
     imagePosition: "center 30%",
+    mapPin: true,
+  },
+  {
+    id: "arkiv-ideathon-2026",
+    title: "Arkiv Ideathon 2026",
+    subtitle: "Host and judge: What can YOU [ ARKIV ] ?",
+    company: "Arkiv (Golem Factory)",
+    role: "Host & Judge",
+    period: { start: "Aug 2026", end: "Aug 2026" },
+    city: "Online",
+    country: "Worldwide",
+    coordinates: null,
+    category: "Hackathon",
+    year: 2026,
+    date: "Aug 3-31, 2026",
+    description:
+      "Hosted Arkiv's month-long online Ideathon, where builders submitted an idea plus its Arkiv data model across four tracks. Built the developer landing, an idea-coach MCP server that pressure-tests a submission against the judging rubric, and the public results repo, then judged the AI & DevTools and Other tracks.",
+    metrics: [
+      { label: "Submissions judged", value: "169" },
+      { label: "Tracks", value: "4" },
+      { label: "Ideas in public showcase", value: "232" },
+    ],
+    highlights: [
+      "Judged 80 submissions in AI & DevTools and 89 in the Other track",
+      "Idea-coach MCP server (review_my_idea) asks the questions judges ask and returns a readiness band, never a score",
+      "Winners published in the open results repo",
+    ],
+    links: {
+      live: "https://ideathon.arkiv.network",
+      github: "https://github.com/Arkiv-Network/arkiv-ideathon",
+    },
+    imageUrl: "/images/events/arkiv_ideathon_2026.jpg",
+    mapPin: false,
+  },
+  {
+    id: "ethrome-2026",
+    title: "ETHRome 2026",
+    subtitle: "Arkiv bounty lead, workshop and judge",
+    company: "Arkiv (Golem Factory)",
+    role: "Sr. Developer Relations",
+    period: { start: "Sep 2026", end: "Sep 2026" },
+    city: "Rome",
+    country: "Italy",
+    coordinates: { lat: 41.9028, lng: 12.4964 },
+    category: "Hackathon",
+    year: 2026,
+    date: "Sep 11-13, 2026",
+    description:
+      "Led Arkiv's bounty at ETHRome, a 40-builder hackathon at Urbe Hub in Rome. Wrote the missions and rules into one canonical source, gave a Postgres to Arkiv workshop on SDK 0.8, shipped the builder hub page and a keyless MCP server that checks schemas and submissions, and judged on site. 13 teams shipped on the Arkiv Tiramisu testnet; afterwards every piece of builder feedback was verified against SDK source and handed to engineering.",
+    mapDescription: "Arkiv bounty at ETHRome: workshop, MCP rules checker, on-site judging. 13 teams shipped.",
+    metrics: [
+      { label: "Teams shipped on Arkiv", value: "13" },
+      { label: "Builder MCP calls", value: "204" },
+      { label: "Feedback points verified", value: "286" },
+      { label: "Apps built on Entity Expiration", value: "11 of 14" },
+    ],
+    highlights: [
+      "Workshop: migrate a Postgres schema to Arkiv entities with an AI agent, on SDK 0.8",
+      "ETHRome MCP server: read-only and keyless, with schema and submission checks builders ran before submitting",
+      "Measured the SDK against the live network before the event and fixed 7 wrong assumptions, including a 10x block-time error",
+      "Winners: HealthSend (Best Use of Arkiv), Vespro (Built to Expire), Hydra (Live Wire), plus Judges' Awards for Wall Street Slot and gitkiv",
+      "Post-event: 286 builder claims about Arkiv checked against source (133 confirmed, 51 partly true, 15 wrong) and turned into engineering asks",
+    ],
+    links: {
+      live: "https://hub.arkiv.network/ethrome",
+      x: "https://x.com/SantiagoDevRel/status/2099072244202738056",
+    },
+    imageUrl: "/images/events/ethrome_2026_1.jpg",
+    imagePosition: "center 22%",
+    imageGallery: [
+      "/images/events/ethrome_2026_1.jpg",
+      "/images/events/ethrome_2026_2.jpg",
+      "/images/events/ethrome_2026_3.jpg",
+    ],
     mapPin: true,
   },
 ];

@@ -5,7 +5,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { X, ExternalLink } from "lucide-react";
-import { MapEvent, EventCategory } from "@/data/events";
+import { MapEvent, EventCategory, linkLabel } from "@/data/events";
 import { ModalPortal } from "@/components/ui/ModalPortal";
 import { useModalLock } from "@/hooks/useModalLock";
 import SurveyChart from "./SurveyChart";
@@ -158,7 +158,7 @@ export default function EventModal({ event, onClose }: EventModalProps) {
             <div className="flex flex-wrap gap-3 mt-5 pt-4 border-t border-white/[0.06]">
               {Object.entries(event.links).map(([key, url]) => {
                 if (!url) return null;
-                const label = key === "live" ? "Website" : key.charAt(0).toUpperCase() + key.slice(1);
+                const label = linkLabel(key);
                 return (
                   <a
                     key={key}

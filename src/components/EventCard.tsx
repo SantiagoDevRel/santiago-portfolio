@@ -5,7 +5,7 @@ import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
-import { MapEvent, EventCategory } from "@/data/events";
+import { MapEvent, EventCategory, linkLabel } from "@/data/events";
 
 import EventModal from "./EventModal";
 
@@ -128,7 +128,7 @@ export default function EventCard({ event }: EventCardProps) {
           {/* Links + See more */}
           <div className="flex flex-wrap items-center gap-3 mt-auto pt-3 border-t border-white/[0.06]">
             {event.links && Object.entries(event.links).filter(([, url]) => url).slice(0, 2).map(([key, url]) => {
-              const label = key === "live" ? "Website" : key.charAt(0).toUpperCase() + key.slice(1);
+              const label = linkLabel(key);
               return (
                 <a
                   key={key}
