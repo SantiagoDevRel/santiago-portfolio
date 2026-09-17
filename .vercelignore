@@ -1,0 +1,12 @@
+# Deny-all allowlist: only what the Next.js build needs is uploaded.
+/*
+!/src
+!/public
+!/package.json
+!/package-lock.json
+!/next.config.mjs
+!/tsconfig.json
+!/tailwind.config.ts
+!/postcss.config.mjs
+!/.eslintrc.json
+!/next-env.d.ts
