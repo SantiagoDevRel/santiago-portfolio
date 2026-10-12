@@ -26,8 +26,15 @@ import {
   Network,
   X,
   ExternalLink,
+  createLucideIcon,
   type LucideIcon,
 } from "lucide-react";
+
+const SoccerBall = createLucideIcon("SoccerBall", [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "outline" }],
+  ["path", { d: "m12 7 3.2 2.3-1.2 3.7h-4l-1.2-3.7z", key: "pentagon" }],
+  ["path", { d: "M12 7V2M8.8 9.3 4.1 7.8M15.2 9.3l4.7-1.5M10 13l-2.8 3.7M14 13l2.8 3.7M7.2 16.7l-1.1 3M16.8 16.7l1.1 3", key: "seams" }],
+]);
 
 const iconMap: Record<string, LucideIcon> = {
   Building2,
@@ -47,6 +54,7 @@ const iconMap: Record<string, LucideIcon> = {
   Server,
   Rss,
   Network,
+  SoccerBall,
 };
 
 const statusConfig: Record<string, { label: string; color: string }> = {
@@ -94,10 +102,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </span>
         )}
 
-        {(Icon || project.productionFeatured) && (
+        {(Icon || project.productionFeatureRank !== undefined) && (
           <div className="mb-3 flex items-center gap-1">
             {Icon && <Icon size={20} className="text-[#FF6B35] shrink-0" />}
-            {project.productionFeatured && (
+            {project.productionFeatureRank !== undefined && (
               <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-amber-400/10 px-1.5 py-0.5 text-xs font-medium text-amber-300">
                 <Star size={12} fill="currentColor" aria-hidden="true" />
                 Production project

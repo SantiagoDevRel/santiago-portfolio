@@ -17,7 +17,7 @@ export interface Project {
   highlights: string[];
   imageUrl?: string | null;
   featured?: boolean;
-  productionFeatured?: boolean;
+  productionFeatureRank?: number;
   icon?: string;
   liveUrl?: string | null;
   githubUrl?: string | null;
@@ -95,6 +95,7 @@ export const projects: Project[] = [
     liveUrl: "https://arkivmcp.vercel.app",
     githubUrl: null,
     status: "live",
+    productionFeatureRank: 3,
   },
   {
     id: "arkiv-skills-2026",
@@ -125,6 +126,7 @@ export const projects: Project[] = [
     liveUrl: "https://hub.arkiv.network/ai-tools",
     githubUrl: "https://github.com/Arkiv-Network/skills",
     status: "live",
+    productionFeatureRank: 4,
   },
   {
     id: "arkiv-npm-tools-2026",
@@ -199,6 +201,7 @@ export const projects: Project[] = [
     liveUrl: "https://hub.arkiv.network/ai-tools",
     githubUrl: null,
     status: "live",
+    productionFeatureRank: 5,
   },
   {
     id: "query-the-goat-2026",
@@ -291,7 +294,7 @@ export const projects: Project[] = [
     ],
     featured: true,
     icon: "Drumstick",
-    productionFeatured: true,
+    productionFeatureRank: 1,
     liveUrl: "https://lapollacolombiana.com",
     githubUrl: "https://github.com/SantiagoDevRel/la-polla-app",
     status: "live",
@@ -323,8 +326,8 @@ export const projects: Project[] = [
       "Community photos, neighborhood groups, supporter businesses and leader tools extend beyond the audio library",
     ],
     featured: true,
-    icon: "Music",
-    productionFeatured: true,
+    icon: "SoccerBall",
+    productionFeatureRank: 2,
     liveUrl: "https://daleve.co",
     githubUrl: null,
     status: "live",
