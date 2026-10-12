@@ -11,6 +11,8 @@ Company logos and event photos live in `public/images/events/` and `public/image
 
 Event links use a shared `linkLabel()` helper in `events.ts`: unknown keys are capitalised, and `live` / `x` map to "Website" / "Post on X".
 
+The Built page groups Arkiv work by MCP, Agent Skills/plugin, npm tools and Hub/demos rather than one card per package. Keep live badges and demo links only for reachable public destinations; historical projects with paused deployments link to their public source instead. Dale Ve! links to the public web and iPhone apps and labels Android as closed testing. The homepage carousel selects its six featured project IDs in `src/app/page.tsx`.
+
 ## Deploy
 
 `main` is connected to the Vercel project `santiago-portfolio` (team `santiago-hobby`), so a push to `main` deploys to production at [www.santiagodevrel.dev](https://www.santiagodevrel.dev). The apex domain redirects to `www`.

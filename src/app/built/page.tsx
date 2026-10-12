@@ -28,6 +28,7 @@ export default function BuiltPage() {
   const filtered = projects.filter(
     (p) => activeFilter === "All" || p.category === activeFilter
   );
+  const useThreeColumns = filtered.length >= 3 && filtered.length % 3 !== 1;
 
   return (
     <div className="pt-28 pb-20 px-6 max-w-6xl mx-auto">
@@ -47,15 +48,16 @@ export default function BuiltPage() {
 
       <div
         key={activeFilter}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 animate-[fadeIn_100ms_ease-in]"
+        className="flex flex-wrap justify-center gap-5 animate-[fadeIn_100ms_ease-in]"
       >
         {filtered.map((project, index) => (
           <motion.div
             key={project.id}
+            className={`w-full shrink-0 md:w-[calc(50%-0.625rem)] ${useThreeColumns ? "lg:w-[calc(33.333%-0.834rem)]" : "lg:w-[calc(50%-0.625rem)]"}`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+            transition={{ duration: 0.5, delay: Math.min(index * 0.1, 0.3), ease: "easeOut" }}
           >
             <ProjectCard project={project} />
           </motion.div>
