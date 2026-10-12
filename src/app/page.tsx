@@ -41,7 +41,17 @@ export default function Home() {
     .map((id) => events.find((e) => e.id === id))
     .filter(Boolean) as typeof events;
 
-  const recentProjects = projects.slice(0, 6);
+  const featuredProjectIds = [
+    "surex-ethglobal-2026",
+    "arkiv-mcp-2026",
+    "arkiv-skills-2026",
+    "arkiv-npm-tools-2026",
+    "dale-ve-2026",
+    "la-polla-2026",
+  ];
+  const recentProjects = featuredProjectIds
+    .map((id) => projects.find((project) => project.id === id))
+    .filter((project): project is (typeof projects)[number] => Boolean(project));
 
   return (
     <>
