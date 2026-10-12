@@ -94,7 +94,17 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </span>
         )}
 
-        {Icon && <Icon size={20} className="text-[#FF6B35] mb-3" />}
+        {(Icon || project.productionFeatured) && (
+          <div className="mb-3 flex items-center gap-1">
+            {Icon && <Icon size={20} className="text-[#FF6B35] shrink-0" />}
+            {project.productionFeatured && (
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-amber-400/10 px-1.5 py-0.5 text-xs font-medium text-amber-300">
+                <Star size={12} fill="currentColor" aria-hidden="true" />
+                Production project
+              </span>
+            )}
+          </div>
+        )}
 
         <h3 className="text-sm font-bold tracking-widest uppercase">
           <span className="text-[#FF6B35]">{project.title}</span>
