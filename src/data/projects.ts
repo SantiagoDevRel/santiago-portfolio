@@ -17,6 +17,7 @@ export interface Project {
   highlights: string[];
   imageUrl?: string | null;
   featured?: boolean;
+  productionFeatured?: boolean;
   icon?: string;
   liveUrl?: string | null;
   githubUrl?: string | null;
@@ -290,6 +291,7 @@ export const projects: Project[] = [
     ],
     featured: true,
     icon: "Drumstick",
+    productionFeatured: true,
     liveUrl: "https://lapollacolombiana.com",
     githubUrl: "https://github.com/SantiagoDevRel/la-polla-app",
     status: "live",
@@ -322,6 +324,7 @@ export const projects: Project[] = [
     ],
     featured: true,
     icon: "Music",
+    productionFeatured: true,
     liveUrl: "https://daleve.co",
     githubUrl: null,
     status: "live",

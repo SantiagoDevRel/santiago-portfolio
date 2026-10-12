@@ -27,7 +27,7 @@ export default function BuiltPage() {
 
   const filtered = projects.filter(
     (p) => activeFilter === "All" || p.category === activeFilter
-  );
+  ).sort((a, b) => Number(Boolean(b.productionFeatured)) - Number(Boolean(a.productionFeatured)));
   const useThreeColumns = filtered.length >= 3 && filtered.length % 3 !== 1;
 
   return (
