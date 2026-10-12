@@ -92,31 +92,30 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         onMouseLeave={() => window.dispatchEvent(new Event("spotlight:show"))}
         className={`rounded-2xl border ${cardBorder} ${cardShadow} bg-white/[0.03] backdrop-blur-md p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/10 hover:border-orange-500/20 h-full flex flex-col relative`}
       >
-        {status && (
-          <span
-            className="absolute top-3 right-3 flex items-center gap-1.5 text-[11px] px-2 py-0.5 rounded-full bg-[#1a1a1a]"
-            style={{ border: `1px solid ${status.color}4d`, color: status.color }}
-          >
-            <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: status.color }} />
-            {status.label}
-          </span>
-        )}
-
-        {(Icon || project.productionFeatureRank !== undefined) && (
-          <div className="mb-3 flex items-center gap-1">
+        {(status || Icon || project.productionFeatureRank !== undefined) && (
+          <div className="mb-3 flex flex-wrap items-center gap-2">
             {Icon && <Icon size={20} className="text-[#FF6B35] shrink-0" />}
             {project.productionFeatureRank !== undefined && (
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-amber-400/10 px-1.5 py-0.5 text-xs font-medium text-amber-300">
-                <Star size={12} fill="currentColor" aria-hidden="true" />
+              <span className="inline-flex min-w-0 max-w-full items-center gap-1.5 rounded-full border border-amber-400/30 bg-amber-400/10 px-1.5 py-0.5 text-xs font-medium leading-tight text-amber-300">
+                <Star size={12} fill="currentColor" className="shrink-0" aria-hidden="true" />
                 Production project
+              </span>
+            )}
+            {status && (
+              <span
+                className="ml-auto flex items-center gap-1.5 rounded-full bg-[#1a1a1a] px-2 py-0.5 text-[11px]"
+                style={{ border: `1px solid ${status.color}4d`, color: status.color }}
+              >
+                <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: status.color }} />
+                {status.label}
               </span>
             )}
           </div>
         )}
 
-        <h3 className="text-sm font-bold tracking-widest uppercase">
+        <h3 className="flex flex-wrap gap-x-2 text-sm font-bold tracking-widest uppercase">
           <span className="text-[#FF6B35]">{project.title}</span>
-          <span className="text-foreground/50 ml-2">{getYear(project.period)}</span>
+          <span className="text-foreground/50">{getYear(project.period)}</span>
         </h3>
 
         <p className="text-base text-foreground/80 mt-3 leading-relaxed line-clamp-3">
