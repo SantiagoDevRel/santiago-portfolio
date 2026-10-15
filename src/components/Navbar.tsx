@@ -1,5 +1,5 @@
-// Navbar — Companies (dropdown) | On The Ground | Content | Built | About
-// Mobile: hamburger menu with full-screen drawer
+// Navbar — Companies (dropdown) | Leadership | Hackathons | On The Ground | Content | Built | Tooling | How I Work
+// Below lg: hamburger menu with full-screen drawer (eight top-level items do not fit at md)
 "use client";
 
 import { useState, useRef, useEffect } from "react";
@@ -11,9 +11,11 @@ import { FlagImage } from "@/components/FlagImage";
 
 const navLinks = [
   { href: "/leadership", label: "Leadership" },
+  { href: "/hackathons", label: "Hackathons" },
   { href: "/on-the-ground", label: "On The Ground" },
   { href: "/content", label: "Content" },
   { href: "/built", label: "Built" },
+  { href: "/tooling", label: "Tooling" },
   { href: "/how-i-work", label: "How I Work" },
 ];
 
@@ -23,7 +25,7 @@ const workDropdown = [
   { href: "/work/swisstronik", label: "Swisstronik", flagCode: "ch", logo: "/images/events/swisstronik_logo.jpg" },
   { href: "/work/chainsafe", label: "ChainSafe Systems", flagCode: "ca", logo: "/images/events/chainsafe_logo.jpg" },
   { href: "/work/lisk", label: "Lisk / Onchain Foundation", flagCode: "ch", logo: "/images/events/lisk_logo.jpg" },
-  { href: "/work/arkiv", label: "Arkiv (Golem Factory)", flagCode: "pl", logo: "/images/events/arkiv_logo.png" },
+  { href: "/work/arkiv", label: "Arkiv (Golem Factory)", flagCode: "ch", logo: "/images/events/arkiv_logo.png" },
 ];
 
 const socialLinks = [
@@ -74,7 +76,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <ul className="hidden md:flex gap-6 items-center">
+          <ul className="hidden lg:flex gap-6 items-center">
             {/* Work dropdown */}
             <li
               ref={dropdownRef}
@@ -147,7 +149,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop social icons */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-4">
           {socialLinks.map((s) => (
             <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-[#FF6B35] transition-colors">
               {s.icon}
@@ -158,7 +160,7 @@ export default function Navbar() {
         {/* Mobile hamburger button */}
         <button
           onClick={() => setMobileOpen(true)}
-          className="md:hidden w-10 h-10 flex items-center justify-center text-foreground/70 hover:text-[#FF6B35] transition-colors"
+          className="lg:hidden w-10 h-10 flex items-center justify-center text-foreground/70 hover:text-[#FF6B35] transition-colors"
           aria-label="Open menu"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -173,7 +175,7 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            className="fixed top-0 left-0 w-screen h-screen z-[9999] md:hidden bg-[#0a0a0a] overflow-y-auto"
+            className="fixed top-0 left-0 w-screen h-screen z-[9999] lg:hidden bg-[#0a0a0a] overflow-y-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

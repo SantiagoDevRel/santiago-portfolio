@@ -40,7 +40,7 @@ export interface MapEvent {
   mapPin?: boolean;
 }
 
-const LINK_LABELS: Record<string, string> = { live: "Website", x: "Post on X" };
+const LINK_LABELS: Record<string, string> = { live: "Website", x: "Post on X", github: "GitHub" };
 
 export function linkLabel(key: string): string {
   return LINK_LABELS[key] ?? key.charAt(0).toUpperCase() + key.slice(1);
@@ -1150,7 +1150,7 @@ export const events: MapEvent[] = [
   {
     id: "arkiv-ideathon-2026",
     title: "Arkiv Ideathon 2026",
-    subtitle: "Host and judge: What can YOU [ ARKIV ] ?",
+    subtitle: "What can YOU [ ARKIV ] ?",
     company: "Arkiv (Golem Factory)",
     role: "Host & Judge",
     period: { start: "Aug 2026", end: "Aug 2026" },
@@ -1161,20 +1161,24 @@ export const events: MapEvent[] = [
     year: 2026,
     date: "Aug 3-31, 2026",
     description:
-      "Hosted Arkiv's month-long online Ideathon, where builders submitted an idea plus its Arkiv data model across four tracks. Built the developer landing, an idea-coach MCP server that pressure-tests a submission against the judging rubric, and the public results repo, then judged the AI & DevTools and Other tracks.",
+      "Hosted Arkiv's month-long online Ideathon: builders pitched an idea plus its Arkiv data model across four tracks, for a $4,000 USDC prize pool. 346 ideas came in. Built the developer landing, an idea-coach MCP server that pressure-tests a submission against the judging rubric, and the public results repo, then hosted and judged the AI & DevTools and Other tracks.",
     metrics: [
+      { label: "Ideas submitted", value: "346" },
       { label: "Submissions judged", value: "169" },
-      { label: "Tracks", value: "4" },
-      { label: "Ideas in public showcase", value: "232" },
+      { label: "Submitters who used the MCP", value: "50%" },
+      { label: "USDC prize pool", value: "$4,000" },
     ],
     highlights: [
       "Judged 80 submissions in AI & DevTools and 89 in the Other track",
       "Idea-coach MCP server (review_my_idea) asks the questions judges ask and returns a readiness band, never a score",
-      "Winners published in the open results repo",
+      "172 of 345 submitters said they connected the MCP to their agent; 254 found the Ideathon through an X post",
+      "AI & DevTools winners: Tried That, Capability Canary and MCP Attest. Other track: Tideland, Layak and GelGit",
+      "232 ideas and every winner are published in the open results repo",
     ],
     links: {
-      live: "https://ideathon.arkiv.network",
+      live: "https://arkiv-ideathon.vercel.app",
       github: "https://github.com/Arkiv-Network/arkiv-ideathon",
+      video: "https://x.com/SantiagoDevRel/status/2085651560017568225",
     },
     imageUrl: "/images/events/arkiv_ideathon_2026.jpg",
     mapPin: false,
@@ -1206,11 +1210,13 @@ export const events: MapEvent[] = [
       "ETHRome MCP server: read-only and keyless, with schema and submission checks builders ran before submitting",
       "Measured the SDK against the live network before the event and fixed 7 wrong assumptions, including a 10x block-time error",
       "Winners: HealthSend (Best Use of Arkiv), Vespro (Built to Expire), Hydra (Live Wire), plus Judges' Awards for Wall Street Slot and gitkiv",
+      "Builders created 2,008 Arkiv entities on Tiramisu over the weekend; 8 of the 10 teams that answered the form used the MCP",
       "Post-event: 286 builder claims about Arkiv checked against source (133 confirmed, 51 partly true, 15 wrong) and turned into engineering asks",
     ],
     links: {
-      live: "https://hub.arkiv.network/ethrome",
+      live: "https://arkiv-hub.vercel.app/ethrome",
       x: "https://x.com/SantiagoDevRel/status/2099072244202738056",
+      workshop: "https://ethrome-workshop.vercel.app",
     },
     imageUrl: "/images/events/ethrome_2026_1.jpg",
     imagePosition: "center 22%",
@@ -1220,5 +1226,42 @@ export const events: MapEvent[] = [
       "/images/events/ethrome_2026_3.jpg",
     ],
     mapPin: true,
+  },
+  {
+    id: "arkiv-devfolio-global-tour-stop-2026",
+    title: "Arkiv: Global Tour Stop on Devfolio",
+    subtitle: "Online builder challenge on the road to Devcon 8",
+    company: "Arkiv (Golem Factory)",
+    role: "Organizer",
+    period: { start: "Oct 2026", end: "Oct 2026" },
+    city: "Online",
+    country: "Worldwide",
+    coordinates: null,
+    category: "Hackathon",
+    year: 2026,
+    date: "Oct 9-18, 2026",
+    description:
+      "Running Arkiv's ten-day online challenge on Devfolio, on the road to Devcon 8 Mumbai. Builders ship on the Tiramisu testnet around CROPS (censorship resistance, open source, privacy and security), plus a Best Indian Use Case track. I wrote the rules, rubric and submission checklist in one canonical public repo, set up the Devfolio page, and shipped the event's MCP profile and an Arkiv plugin for Claude Code and Codex, so builders can check a schema or a submission before they send it.",
+    mapDescription: "Ten-day online Arkiv challenge on Devfolio, $5,000 USDC and 5 Devcon 8 tickets.",
+    metrics: [
+      { label: "USDC prize pool", value: "$5,000" },
+      { label: "Devcon 8 tickets", value: "5" },
+      { label: "Tracks", value: "5" },
+      { label: "Duration", value: "10 days" },
+    ],
+    highlights: [
+      "Opened on October 9 at Network School Astana; submissions close October 18 and winners are announced October 23",
+      "Gates before scoring: a public deployment, an MIT repo, /arkiv/schema.md, /arkiv/friction.md, Tiramisu wallet evidence and a demo video of 3 minutes or less",
+      "Four criteria, 25 points each: why this pillar (or why India), why Arkiv, how you use Arkiv, and a friction report",
+      "Rules frozen on October 9 in one canonical repo that the Devfolio page, the MCP and the checklist all follow",
+      "Walkthrough video: connect Claude Code, Codex, ChatGPT or Claude to Arkiv in about a minute",
+    ],
+    links: {
+      live: "https://arkiv.devfolio.co/overview",
+      github: "https://github.com/Arkiv-Network/global-tour-stop-pre-devcon",
+      video: "https://x.com/SantiagoDevRel/status/2110705690901962809",
+    },
+    imageUrl: "/images/events/arkiv_devfolio_2026.jpg",
+    mapPin: false,
   },
 ];
