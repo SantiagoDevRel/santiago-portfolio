@@ -24,7 +24,7 @@ const companyFlags: Record<string, string> = {
   Swisstronik: "ch",
   "ChainSafe – Web3.js": "ca",
   "Lisk / Onchain Foundation": "ch",
-  "Arkiv (Golem Factory)": "pl",
+  "Arkiv (Golem Factory)": "ch",
 };
 
 const companyLogos: Record<string, string> = {

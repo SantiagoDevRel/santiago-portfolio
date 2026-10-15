@@ -5,6 +5,9 @@ All content is data-driven from `src/data/`:
 - `career.ts` — career timeline entries; each entry powers a `/work/<slug>` company page (Crimson, Libertum, Swisstronik, ChainSafe, Lisk, Arkiv)
 - `projects.ts` — the Built section (`/built` + homepage carousel); categories are derived from the data, colors live in `src/app/built/page.tsx`
 - `events.ts` — events, map pins (`WorldMap`), `/on-the-ground` and `/leadership`
+- `hackathons.ts` — `/hackathons`: the Arkiv hackathons Santiago ran (event ids from `events.ts`, plus their media, dates and the matching `/tooling` section) and the earlier ones shown as event cards
+- `tooling.ts` — `/tooling`: each developer tool with its stats, points, links and media
+- `media.ts` — shared walkthrough videos and dashboard screenshots, plus `SNAPSHOT_DATE` for the captures
 - `education.ts` — the Content section
 
 Company logos and event photos live in `public/images/events/` and `public/images/companies/`. Missing company photos render a "Photo coming soon" placeholder.
@@ -12,6 +15,8 @@ Company logos and event photos live in `public/images/events/` and `public/image
 Event links use a shared `linkLabel()` helper in `events.ts`: unknown keys are capitalised, and `live` / `x` map to "Website" / "Post on X".
 
 The Built page groups Arkiv work by MCP, Agent Skills/plugin, npm tools and Hub/demos rather than one card per package. Keep live badges and demo links only for reachable public destinations; historical projects with paused deployments link to their public source instead. Dale Ve! links to the public web and iPhone apps and labels Android as closed testing. The homepage carousel selects its six featured project IDs in `src/app/page.tsx`.
+
+`/hackathons` and `/tooling` are server components. The hackathon status badge (Live, Judging, Closed) is computed in the browser from the dates in `hackathons.ts`, so it changes without a redeploy; the Devfolio entry still needs its winners after October 23, 2026. Screenshots in `public/images/tooling/` are 2x captures of the private MCP telemetry dashboard and GitHub traffic: never link the dashboard itself, and keep cost tiles and builder questions out of new captures. Videos in `public/videos/` are self-hosted copies of Santiago's own X posts (the X CDN refuses other sites), loaded with `preload="none"`.
 
 On `/built`, `productionFeatureRank` orders the starred “Production project” cards: La Polla, Dale Ve!, Arkiv MCP, Arkiv Agent Skills & Plugin, then Arkiv Hub & Demos. The existing `featured` flag still controls card border styling and is not the sort key. Dale Ve! uses a soccer-ball icon in its card and details.
 
