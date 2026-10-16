@@ -198,7 +198,7 @@ export const career: CareerEntry[] = [
     company: "Lisk / Onchain Foundation",
     companyUrl: "https://lisk.com",
     role: "Global Developer Advocate",
-    period: { start: "Nov 2024", end: "May 2026" },
+    period: { start: "Nov 2024", end: "Jun 2026" },
     description:
       "Global Developer Advocate for Lisk, an Ethereum L2 focused on emerging markets. Building developer tooling, running workshops across LATAM and Africa, and growing the builder community.",
     metrics: [
