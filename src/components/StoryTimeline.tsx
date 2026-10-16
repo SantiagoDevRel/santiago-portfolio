@@ -76,7 +76,7 @@ const items = [
   {
     year: "2026",
     tagline: "Dream year #2. Now with AI in the toolkit.",
-    desc: "Same mission, sharper tools. Building at the intersection of Web3 and AI, learning fast, and writing the next chapter in real time.",
+    desc: "Same mission, sharper tools. Building at the intersection of AI and Web3, learning fast, and writing the next chapter in real time.",
     tag: "In progress",
     tagColor: "green" as const,
     photo: "/images/story/2026.jpg",

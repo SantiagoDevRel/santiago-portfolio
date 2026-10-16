@@ -16,7 +16,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "SantiagoDevRel portfolio",
   description:
-    "Developer Advocate working at the intersection of Web3, AI, and Emerging Markets.",
+    "Developer Advocate working at the intersection of AI, Web3, and Emerging Markets.",
 };
 
 export default function RootLayout({

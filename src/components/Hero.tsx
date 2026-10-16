@@ -43,7 +43,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
           >
-            Web3 + AI Developer Advocate in Emerging Markets
+            AI + Web3 Developer Advocate in Emerging Markets
           </motion.p>
         </div>
       </div>
