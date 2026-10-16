@@ -120,7 +120,7 @@ export const education: EducationEntry[] = [
     platform: "YouTube",
     category: "Video",
     date: "Apr – Oct 2024",
-    description: "Founded and led the Web3.js Ambassador Program. 260+ applications, 25+ active ambassadors delivering workshops in Togo, Berlin, Nigeria, Colombia, Mexico, India, Norway. Produced 20+ hours of tutorials in English, French, Spanish, and more.",
+    description: "Founded and led the Web3.js Ambassador Program. 260+ applications, 20+ active ambassadors delivering workshops in Togo, Berlin, Nigeria, Colombia, Mexico, India, Norway. Produced 20+ hours of tutorials in English, French, Spanish, and more.",
     links: [
       { label: "Apply form", url: "https://docs.google.com/forms/d/e/1FAIpQLSc_dPjfoy_YnHXi12V-plFXRxZowtOtPOLBafMz7DKXsvo5Sw/viewform" },
       { label: "Program update", url: "https://www.linkedin.com/feed/update/urn:li:activity:7239165877957349376/" },
