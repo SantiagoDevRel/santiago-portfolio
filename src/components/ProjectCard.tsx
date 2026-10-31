@@ -124,7 +124,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </p>
 
         {userMetric ? (
-          <p className="text-sm text-foreground/80 mt-3">
+          <p className="text-sm text-foreground/80 mt-3" title={project.highlights[0]}>
             <span className="font-semibold text-[#FF6B35]">{userMetric.value}</span>{" "}
             {userMetric.label.toLowerCase()}
           </p>

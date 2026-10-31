@@ -312,6 +312,7 @@ export const projects: Project[] = [
     description:
       "Football fan platform for Los Del Sur in Medellín. Public on web, iOS and Android.",
     metrics: [
+      { label: "Users in 72 hours", value: "2,100+" },
       { label: "Registered users", value: "1,600+" },
       { label: "Web", value: "Live" },
       { label: "iOS", value: "App Store" },
@@ -323,7 +324,7 @@ export const projects: Project[] = [
       { label: "Live Web App", url: "https://daleve.co" },
     ],
     highlights: [
-      "Public launch on October 29, 2026, with 1,200+ in the first 48 hours after launch",
+      "Public launch on October 29, 2026: 2,100+ people used it in the first 72 hours and 1,600+ created accounts",
       "Chants with offline audio and synced lyrics, plus offline maps",
       "Community photos, neighborhood groups (combos) and supporter businesses",
       "WhatsApp and SMS login, plus push notifications",
