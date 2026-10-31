@@ -75,6 +75,7 @@ interface ProjectCardProps {
 export default function ProjectCard({ project }: ProjectCardProps) {
   const [showModal, setShowModal] = useState(false);
   const visibleLinks = project.links.slice(0, 2);
+  const userMetric = project.id === "dale-ve-2026" ? project.metrics[0] : null;
   const Icon = project.icon ? iconMap[project.icon] : null;
   const status = project.status ? statusConfig[project.status] : null;
 
@@ -121,6 +122,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <p className="text-base text-foreground/80 mt-3 leading-relaxed line-clamp-3">
           {project.description}
         </p>
+
+        {userMetric ? (
+          <p className="text-sm text-foreground/80 mt-3">
+            <span className="font-semibold text-[#FF6B35]">{userMetric.value}</span>{" "}
+            {userMetric.label.toLowerCase()}
+          </p>
+        ) : null}
 
         <div className="flex flex-wrap gap-1.5 mt-4">
           {project.tags.map((tag) => (
