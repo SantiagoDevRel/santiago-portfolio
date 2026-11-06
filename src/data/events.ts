@@ -40,7 +40,7 @@ export interface MapEvent {
   mapPin?: boolean;
 }
 
-const LINK_LABELS: Record<string, string> = { live: "Website", x: "Post on X", github: "GitHub" };
+const LINK_LABELS: Record<string, string> = { live: "Website", x: "Post on X", github: "GitHub", youtube: "YouTube" };
 
 export function linkLabel(key: string): string {
   return LINK_LABELS[key] ?? key.charAt(0).toUpperCase() + key.slice(1);
@@ -1263,5 +1263,43 @@ export const events: MapEvent[] = [
     },
     imageUrl: "/images/events/arkiv_devfolio_2026.jpg",
     mapPin: false,
+  },
+  {
+    id: "ethglobal-mumbai-2026",
+    title: "ETHGlobal Mumbai 2026",
+    subtitle: "Arkiv workshop: From zero to hero with Arkiv, the Web3 database",
+    company: "Arkiv (Golem Factory)",
+    role: "Sr. Developer Relations",
+    period: { start: "Nov 2026", end: "Nov 2026" },
+    city: "Mumbai",
+    country: "India",
+    coordinates: { lat: 19.076, lng: 72.8777 },
+    category: "Workshop",
+    year: 2026,
+    date: "Nov 5, 2026",
+    description:
+      "Gave Arkiv's 20-minute workshop at ETHGlobal Mumbai, \"From zero to hero with Arkiv, the Web3 database\": Arkiv 101 for builders new to it, then a live app I built where the room scans a QR and writes Arkiv entities from their phones onto a 3D globe on the Rabdi testnet. I also designed Arkiv's $15,000 prize tracks for the hackathon.",
+    mapDescription: "Arkiv workshop at ETHGlobal Mumbai and Arkiv's $15,000 prize tracks.",
+    metrics: [
+      { label: "Workshop", value: "20 min" },
+      { label: "Arkiv prize pool", value: "$15,000" },
+    ],
+    highlights: [
+      "Workshop recording on ETHGlobal's YouTube channel",
+      "Live demo app: the audience writes entities from a QR onto a 3D globe, with lifetimes, filters and an entity inspector",
+      "Prize tracks published on ETHGlobal: Mirror something Ethereum depends on, Build on Arkiv (from scratch and existing projects), Node tooling, and an Arkiv + Swarm bonus",
+    ],
+    links: {
+      youtube: "https://www.youtube.com/live/zZri4bHI1aM?t=410",
+      prizes: "https://ethglobal.com/events/mumbai/prizes/arkiv",
+      x: "https://x.com/SantiagoDevRel/status/2118740782526124326",
+    },
+    imageUrl: "/images/events/ethglobal_mumbai_2026_1.jpg",
+    imagePosition: "center 25%",
+    imageGallery: [
+      "/images/events/ethglobal_mumbai_2026_1.jpg",
+      "/images/events/ethglobal_mumbai_2026_2.jpg",
+    ],
+    mapPin: true,
   },
 ];

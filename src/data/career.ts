@@ -252,6 +252,7 @@ export const career: CareerEntry[] = [
     ],
     category: "Current",
     bullets: [
+      "Gave Arkiv's workshop at ETHGlobal Mumbai 2026 (Nov 5), \"From zero to hero with Arkiv, the Web3 database\", with a live app where the room writes entities from their phones onto a 3D globe on the Rabdi testnet, and designed Arkiv's $15,000 prize tracks for the hackathon",
       "Ran the Arkiv bounty at ETHRome 2026 (Rome): one canonical rule source generating the builder hub page, the MCP knowledge base and the submission form, a 20-minute Postgres to Arkiv workshop on SDK 0.8, and on-site judging. 13 teams shipped on the Tiramisu testnet over the weekend",
       "Shipped a read-only, keyless ETHRome MCP server that builders used as a rules checker: validate a schema, pre-check a submission, read the bounty. 204 builder calls in the event window with 2 technical errors in about 50 hours",
       "Turned hackathon feedback into engineering data: archived every feedback file pinned to the judged commit, and checked 286 builder claims about Arkiv against SDK source (133 confirmed, 51 partly true, 15 wrong) before they reached the engineering team",
@@ -278,6 +279,7 @@ export const career: CareerEntry[] = [
     links: [
       { label: "Arkiv.network", url: "https://arkiv.network" },
       { label: "Arkiv Builder Hub", url: "https://hub.arkiv.network" },
+      { label: "ETHGlobal Mumbai workshop (video)", url: "https://www.youtube.com/live/zZri4bHI1aM?t=410" },
       { label: "ETHRome bounty page", url: "https://arkiv-hub.vercel.app/ethrome" },
       { label: "Arkiv Ideathon results", url: "https://github.com/Arkiv-Network/arkiv-ideathon" },
       { label: "arkiv-sync on npm", url: "https://www.npmjs.com/package/arkiv-sync" },
